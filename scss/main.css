@@ -26,26 +26,6 @@ ul {
   margin: 0;
 }
 
-footer {
-  background-color: #1f456f;
-  color: #c2c2c2;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  border-top: 5px solid #daa520;
-}
-footer p {
-  margin-top: 0.5rem;
-  font-weight: 300;
-}
-footer p a {
-  color: #f8f8f8;
-  text-decoration: none;
-}
-footer p a:hover {
-  color: #daa520;
-}
-
 #navbar {
   position: fixed;
   width: 100%;

@@ -5,12 +5,11 @@
 @import "base/mixins";
 
 // 2. LAYOUT Y ESTILOS GLOBALES
-@import "layout/global"; // Contiene las reglas para body, h1, etc.
-@import "layout/footer";
+@import "layout/global";
 
 // 3. COMPONENTES Y SECCIONES
 @import "components/navbar";
 @import "components/buttons";
-
+// ...
 // Si el compilador sigue dando errores, verifica que estos parciales existan.
 // @import 'layout/hero';
