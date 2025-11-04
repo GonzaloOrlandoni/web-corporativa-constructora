@@ -1,13 +1,14 @@
 // /scss/layout/_global.scss
+// (Este archivo contiene las reglas CSS puras para el body)
 
 body {
-  // Usando la variable definida en _variables.scss
   background-color: $color-light;
   color: $color-text;
   font-family: $font-stack;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 h1,
@@ -15,7 +16,10 @@ h2,
 h3 {
   font-family: $font-headings;
   color: $color-primary;
+  margin-bottom: 0.5rem;
 }
+
+// ... otros estilos globales ...
 // /scss/layout/_global.scss
 
 body {

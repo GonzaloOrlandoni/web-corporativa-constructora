@@ -1,12 +1,19 @@
-// ... (imports base) ...
+// scss/main.scss
 
-// 2. ESTILOS GLOBALES
-@import "layout/global"; // Ya existe
+// 1. BASE: VARIABLES y MIXINS
+@import "base/variables";
+@import "base/mixins";
 
-// 3. IMPORTS DE COMPONENTES/SECCIONES
-@import "components/navbar"; // AÑADIDO
-@import "components/buttons"; // Si creaste este archivo antes
-@import "layout/footer"; // AÑADIDO
+// 2. LAYOUT Y ESTILOS GLOBALES
+@import "layout/global";
+
+// 3. COMPONENTES Y SECCIONES
+@import "components/navbar";
+@import "components/buttons";
+
+// Si creas estos archivos, descoméntalos y úsalos:
+// @import 'layout/footer';
+// @import 'layout/hero';
 // 2. ESTILOS GLOBALES
 // Reglas CSS Globales (para el body, tipografía)
 body {
