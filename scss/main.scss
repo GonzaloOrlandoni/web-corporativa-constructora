@@ -1,15 +1,16 @@
 // scss/main.scss
-// ESTE ARCHIVO SOLO CONTIENE IMPORTACIONES Y COMENTARIOS.
 
 // 1. BASE: VARIABLES y MIXINS
 @import "base/variables";
 @import "base/mixins";
 
 // 2. LAYOUT Y ESTILOS GLOBALES
-@import "layout/global";
+@import "layout/global"; // Contiene las reglas para body, h1, etc.
 @import "layout/footer";
 
 // 3. COMPONENTES Y SECCIONES
 @import "components/navbar";
 @import "components/buttons";
-// @import 'layout/hero'; // Si Hero es un archivo separado, impórtalo aquí.
+
+// Si el compilador sigue dando errores, verifica que estos parciales existan.
+// @import 'layout/hero';
