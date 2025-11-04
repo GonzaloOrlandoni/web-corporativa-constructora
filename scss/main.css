@@ -1,22 +1,3 @@
-@charset "UTF-8";
-body {
-  background-color: #f8f8f8;
-  color: #333333;
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Roboto Slab", serif;
-  color: #1f456f;
-  margin-bottom: 0.5rem;
-}
-
 body {
   background-color: #f8f8f8;
   color: #333333;
@@ -45,24 +26,24 @@ ul {
   margin: 0;
 }
 
-.btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  border-radius: 5px;
+footer {
+  background-color: #1f456f;
+  color: #c2c2c2;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 5px solid #daa520;
+}
+footer p {
+  margin-top: 0.5rem;
+  font-weight: 300;
+}
+footer p a {
+  color: #f8f8f8;
   text-decoration: none;
-  font-weight: 700;
-  transition: background-color 0.3s, color 0.3s;
-  border: 2px solid #daa520;
 }
-
-.btn--primary {
-  background-color: #daa520;
-  color: #1f456f;
-}
-
-.btn--primary:hover {
-  background-color: rgb(173.528, 131.34, 25.472);
-  color: #1f456f;
+footer p a:hover {
+  color: #daa520;
 }
 
 #navbar {
@@ -117,98 +98,6 @@ nav ul a {
 }
 nav ul a:hover {
   color: #daa520;
-}
-
-body {
-  background-color: #f8f8f8;
-  color: #333333;
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Roboto Slab", serif;
-  color: #1f456f;
-  margin-bottom: 0.5rem;
-}
-
-#navbar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  z-index: 1000;
-  background-color: #1f456f;
-  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.4);
-}
-#navbar nav ul {
-  display: flex;
-  gap: 2rem;
-}
-#navbar nav ul a {
-  color: #f8f8f8;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-#navbar nav ul a:hover {
-  color: #daa520;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #f8f8f8;
-  text-decoration: none;
-}
-@media (max-width: 576px) {
-  .logo {
-    font-size: 1.2rem;
-  }
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-nav ul a {
-  color: #c2c2c2;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-nav ul a:hover {
-  color: #daa520;
-}
-
-#hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* Alinea el texto a la izquierda, como es común en webs corporativas */
-  padding-left: 10%;
-  background-color: #333333; /* Solo como placeholder visual */
-}
-
-#hero h1 {
-  font-size: 3.5rem;
-  color: #f8f8f8; /* Color claro para destacar sobre el fondo oscuro (si usas imagen) */
-  text-transform: uppercase;
-}
-
-#hero p {
-  font-size: 1.5rem;
-  color: #c2c2c2;
-  margin-bottom: 2rem;
 }
 
 .btn {

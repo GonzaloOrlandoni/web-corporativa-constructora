@@ -1,0 +1,17 @@
+// /scss/components/_buttons.scss
+
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid $color-accent; // Borde de acento Dorado
+}
+.btn--primary {
+  background-color: $color-accent;
+  color: $color-primary; // Texto azul oscuro sobre fondo acento dorado
+}
+.btn--primary:hover {
+  background-color: darken($color-accent, 10%); // Oscurece el color en hover
+}
