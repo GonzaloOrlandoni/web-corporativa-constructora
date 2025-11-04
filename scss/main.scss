@@ -8,8 +8,14 @@
 @import "layout/global";
 
 // 3. COMPONENTES Y SECCIONES
+// scss/main.scss
+// ... (otras importaciones) ...
+
+// 3. COMPONENTES Y SECCIONES
 @import "components/navbar";
 @import "components/buttons";
+@import "components/services"; // AÑADIDO
+@import "components/projects"; // AÑADIDO
 // ...
 // Si el compilador sigue dando errores, verifica que estos parciales existan.
 // @import 'layout/hero';

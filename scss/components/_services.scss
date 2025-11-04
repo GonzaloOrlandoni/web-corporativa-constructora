@@ -1,0 +1,41 @@
+// /scss/components/_services.scss
+
+#especialidades {
+  background-color: $color-light;
+}
+
+.services-grid {
+  display: grid;
+  /* 3 columnas flexibles y responsivas */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: $color-light;
+  border: 1px solid $color-secondary; // Borde gris suave
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba($color-text, 0.1);
+
+  // Interacción
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); // Se levanta
+    box-shadow: 0 8px 15px rgba($color-text, 0.2); // Sombra más notoria
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+
+  h3 {
+    color: $color-primary; // Azul oscuro
+    font-size: 1.4rem;
+  }
+}
