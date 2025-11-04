@@ -1,0 +1,75 @@
+// ... (imports base) ...
+
+// 2. ESTILOS GLOBALES
+@import "layout/global"; // Ya existe
+
+// 3. IMPORTS DE COMPONENTES/SECCIONES
+@import "components/navbar"; // AÑADIDO
+@import "components/buttons"; // Si creaste este archivo antes
+@import "layout/footer"; // AÑADIDO
+// 2. ESTILOS GLOBALES
+// Reglas CSS Globales (para el body, tipografía)
+body {
+  background-color: $color-light;
+  color: $color-text;
+  font-family: $font-stack;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-headings;
+  color: $color-primary;
+  margin-bottom: 0.5rem;
+}
+
+// 3. NAVBAR
+@import "components/navbar"; // Reglas que definiremos a continuación
+
+// 4. HERO
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Alinea el texto a la izquierda, como es común en webs corporativas */
+  padding-left: 10%;
+  background-color: $color-text; /* Solo como placeholder visual */
+
+  // Aquí puedes añadir una imagen de fondo después si lo deseas
+  // background: url('../img/hero-constructora.jpg') no-repeat center center/cover;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  color: $color-light; /* Color claro para destacar sobre el fondo oscuro (si usas imagen) */
+  text-transform: uppercase;
+}
+#hero p {
+  font-size: 1.5rem;
+  color: $color-secondary;
+  margin-bottom: 2rem;
+}
+
+// 5. BOTÓN
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid $color-accent; // Borde de acento Dorado
+}
+.btn--primary {
+  background-color: $color-accent;
+  color: $color-primary; // Texto azul oscuro sobre fondo acento dorado
+}
+.btn--primary:hover {
+  background-color: darken($color-accent, 10%); // Oscurece el color en hover
+}
+
+// 6. LAYOUT/COMPONENTES (Por crear)
+// @import 'components/buttons';
+// @import 'layout/footer';

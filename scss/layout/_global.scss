@@ -1,0 +1,71 @@
+// /scss/layout/_global.scss
+
+body {
+  // Usando la variable definida en _variables.scss
+  background-color: $color-light;
+  color: $color-text;
+  font-family: $font-stack;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-headings;
+  color: $color-primary;
+}
+// /scss/layout/_global.scss
+
+body {
+  background-color: $color-light;
+  color: $color-text;
+  font-family: $font-stack;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-headings;
+  color: $color-primary;
+  margin-bottom: 0.5rem;
+}
+
+// Estilo para el contenedor principal
+.main-content-wrapper {
+  padding-top: 5rem; // Añadir padding para que el contenido baje del fixed navbar
+}
+
+// Reset de lista (para el menú)
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// /scss/layout/_global.scss
+
+// ... (otros estilos) ...
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid $color-accent;
+}
+.btn--primary {
+  background-color: $color-accent;
+  color: $color-primary; // Texto azul oscuro sobre fondo acento dorado
+}
+.btn--primary:hover {
+  background-color: darken($color-accent, 10%); // Usa la función SASS darken
+  color: $color-primary;
+}

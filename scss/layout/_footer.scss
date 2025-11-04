@@ -1,0 +1,23 @@
+// /scss/layout/_footer.scss
+
+footer {
+  background-color: $color-primary; // Fondo azul oscuro
+  color: $color-secondary; // Texto en gris claro
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 5px solid $color-accent; // Línea dorada de acento
+
+  p {
+    margin-top: 0.5rem;
+    font-weight: 300;
+
+    a {
+      color: $color-light;
+      text-decoration: none;
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}

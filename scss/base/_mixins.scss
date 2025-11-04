@@ -1,0 +1,12 @@
+// Mixin para Media Queries (para un desarrollo responsive eficiente)
+@mixin tablet {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}

@@ -1,0 +1,62 @@
+// /scss/components/_navbar.scss
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between; // Alinea logo a izq y menú a der
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+
+  background-color: $color-primary; // Fondo azul oscuro
+  box-shadow: 0 2px 5px rgba($color-text, 0.4); // Sombra sutil y visible
+
+  // Estilos para la lista de navegación
+  nav ul {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      color: $color-light; // Enlaces en blanco/claro
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-accent; // Acento dorado al pasar el mouse
+      }
+    }
+  }
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-light; // Logo en blanco/claro
+  text-decoration: none;
+
+  @include mobile {
+    font-size: 1.2rem;
+  }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    color: $color-secondary; // Enlaces en gris claro
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-accent; // Acento dorado al pasar el mouse
+    }
+  }
+}

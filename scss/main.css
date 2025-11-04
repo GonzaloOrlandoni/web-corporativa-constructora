@@ -1,0 +1,56 @@
+@charset "UTF-8";
+body {
+  background-color: #f8f8f8;
+  color: #333333;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto Slab", serif;
+  color: #1f456f;
+  margin-bottom: 0.5rem;
+}
+
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Alinea el texto a la izquierda, como es común en webs corporativas */
+  padding-left: 10%;
+  background-color: #333333; /* Solo como placeholder visual */
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  color: #f8f8f8; /* Color claro para destacar sobre el fondo oscuro (si usas imagen) */
+  text-transform: uppercase;
+}
+
+#hero p {
+  font-size: 1.5rem;
+  color: #c2c2c2;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #daa520;
+}
+
+.btn--primary {
+  background-color: #daa520;
+  color: #1f456f;
+}
+
+.btn--primary:hover {
+  background-color: rgb(173.528, 131.34, 25.472);
+}/*# sourceMappingURL=main.css.map */
