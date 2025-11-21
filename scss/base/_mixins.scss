@@ -10,3 +10,19 @@
     @content;
   }
 }
+
+// /scss/base/_mixins.scss
+
+// Mixin para crear un separador angulado con pseudo-elemento
+@mixin slanted-divider($bg-color, $angle: 2deg) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px; /* Altura del angulo */
+  left: 0;
+  z-index: 10;
+  background: $bg-color;
+  // La clave es el "skew" (sesgo) para crear el ángulo
+  transform: skewY($angle);
+  transform-origin: top left;
+}

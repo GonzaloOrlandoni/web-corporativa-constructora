@@ -39,3 +39,30 @@
     font-size: 1.4rem;
   }
 }
+
+// /scss/components/_services.scss
+
+#especialidades {
+  position: relative; // Necesario para posicionar el pseudo-elemento
+  padding: 6rem 0 4rem 0;
+  text-align: center;
+  background-color: $color-light;
+
+  // NUEVO: Divisor Angulado
+  &::before {
+    @include slanted-divider($light-bg, -2deg); // Fondo claro, ángulo -2deg
+    top: -50px; // Sube un poco para que el ángulo se vea bien
+    z-index: 0;
+  }
+
+  // El contenido debe estar por encima del divisor
+  .main-container,
+  h2 {
+    position: relative;
+    z-index: 20;
+  }
+
+  // ... (El resto de tus estilos de #especialidades) ...
+}
+// Asegúrate de que $light-bg sea el color de fondo de la sección anterior o posterior
+// o usa un color de fondo fijo aquí si no es el mismo.

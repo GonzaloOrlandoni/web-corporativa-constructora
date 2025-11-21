@@ -1,9 +1,28 @@
 // /scss/layout/_global.scss
 
-// Estilos de la etiqueta BODY y Tipografía Base
+// 1. ESTILOS BASE Y SCROLLBAR PERSONALIZADA
+html {
+  scroll-behavior: smooth;
+  // Oculta la scrollbar por defecto en Firefox
+  scrollbar-width: thin;
+  scrollbar-color: $color-accent $color-primary; // Dorado sobre Azul
+}
+// Estilo para Webkit (Chrome, Safari)
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: $color-accent; // Dorado
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $color-primary; // Azul
+}
+
+// 2. ESTILOS POR DEFECTO (LIGHT MODE)
 body {
-  background-color: $color-light;
-  color: $color-text;
+  background-color: $light-bg;
+  color: $light-text;
   font-family: $font-stack;
   line-height: 1.6;
   margin: 0;
@@ -11,23 +30,35 @@ body {
   min-height: 100vh;
 }
 
-// Estilos de Encabezados
-h1,
-h2,
-h3 {
-  font-family: $font-headings;
-  color: $color-primary;
-  margin-bottom: 0.5rem;
+// 3. ESTILOS DE ACCESIBILIDAD (Focus Visibles)
+// Da un borde claro a elementos enfocados (links, botones, inputs)
+:focus-visible {
+  outline: 2px solid $color-accent;
+  outline-offset: 2px;
+}
+a:focus-visible {
+  outline-color: $color-accent;
 }
 
-// Estilo para el contenedor principal de contenido
-.main-content-wrapper {
-  padding-top: 5rem; // Espacio para el navbar fijo
-}
+// 4. ESTILOS DARK MODE (Aplicados cuando el body tiene la clase .dark-mode)
+body.dark-mode {
+  background-color: $dark-bg;
+  color: $dark-text;
 
-// Reset básico de listas
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  // Invertir colores de componentes específicos
+  .logo,
+  h1,
+  h2,
+  h3 {
+    color: $dark-text; // Titulos pasan a claro
+  }
+  .btn--primary {
+    // Los botones primarios mantienen el acento
+    color: $dark-text;
+  }
+  .project-card,
+  .service-card {
+    background-color: $dark-bg; // Fondo de tarjeta pasa a oscuro
+    border-color: #333333;
+  }
 }

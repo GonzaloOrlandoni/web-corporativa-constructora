@@ -1,0 +1,59 @@
+// /scss/components/_projects.scss
+
+#proyectos {
+  background-color: $color-primary; // Fondo azul oscuro para contrastar
+  color: $color-light; // Texto claro por defecto
+  padding-bottom: 6rem;
+
+  h2 {
+    color: $color-light; // Título en color claro
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.project-card {
+  background-color: $color-light; // Tarjeta blanca
+  text-align: left;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+
+  // Interacción
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: translateY(-8px); // Se levanta
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .project-details {
+    padding: 1.5rem;
+
+    h3 {
+      font-family: $font-headings;
+      color: $color-primary; // Azul oscuro
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $color-text;
+      margin-bottom: 1rem;
+    }
+
+    .btn--secondary {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+}

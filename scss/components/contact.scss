@@ -1,0 +1,64 @@
+// /scss/components/_contact.scss
+
+#contacto {
+  background-color: $color-light; // Fondo claro
+  padding-bottom: 6rem;
+
+  h2 {
+    color: $color-primary;
+    margin-bottom: 3rem;
+  }
+
+  p {
+    color: $color-text;
+    margin-bottom: 2rem;
+  }
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 2rem;
+  background-color: #fff; // Fondo blanco para que destaque
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba($color-text, 0.1);
+
+  label {
+    display: block;
+    font-weight: 700;
+    color: $color-primary; // Azul oscuro
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid $color-secondary;
+    border-radius: 5px;
+    color: $color-text;
+    font-family: $font-stack;
+    font-size: 1rem;
+
+    // Efecto Focus (Profesional)
+    &:focus {
+      outline: none;
+      border-color: $color-accent; // Borde dorado al enfocar
+      box-shadow: 0 0 0 2px rgba($color-accent, 0.4);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .btn--primary {
+    width: 100%;
+    margin-top: 1rem;
+    // El botón usa el estilo primario (Dorado con texto Azul)
+  }
+}
