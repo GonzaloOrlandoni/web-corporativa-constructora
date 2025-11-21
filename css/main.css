@@ -20,71 +20,138 @@ h3 {
   padding-top: 5rem;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+#hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url("../img/hero-constructora.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: #f8f8f8;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.5rem;
+  color: #f8f8f8;
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: rgb(19.8661971831, 44.2183098592, 71.1338028169);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer .footer-socials {
+  margin-top: 1rem;
+}
+footer .footer-socials a {
+  color: #daa520;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer .footer-socials a:hover {
+  text-decoration: underline;
 }
 
 #navbar {
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #1f456f;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   z-index: 1000;
-  background-color: #1f456f;
-  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+#navbar .logo {
+  font-family: "Roboto Slab", serif;
+  color: #f8f8f8;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
 #navbar nav ul {
   display: flex;
+  list-style: none;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
-
 #navbar nav ul a {
-  color: #f8f8f8;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
-
 #navbar nav ul a:hover {
   color: #daa520;
 }
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #f8f8f8;
-  text-decoration: none;
+#navbar .btn--cta {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #daa520;
+  color: #daa520 !important;
+  border-radius: 4px;
+}
+#navbar .btn--cta:hover {
+  background-color: #daa520;
+  color: #1f456f !important;
 }
 
-@media (max-width: 576px) {
-  .logo {
-    font-size: 1.2rem;
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+  }
+  #nav-links {
+    display: none;
   }
 }
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav ul a {
-  color: #c2c2c2;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav ul a:hover {
-  color: #daa520;
-}
-
 .btn {
   padding: 1rem 2.5rem;
   border-radius: 5px;
@@ -103,4 +170,181 @@ nav ul a:hover {
   background-color: rgb(173.528, 131.34, 25.472);
 }
 
-/*# sourceMappingURL=main.css.map */
+#servicios {
+  padding: 5rem 1rem;
+  background-color: #fff;
+  text-align: center;
+}
+#servicios h2 {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: #1f456f;
+  position: relative;
+  display: inline-block;
+}
+#servicios h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 4px;
+  background: #daa520;
+  margin: 0.5rem auto 0;
+}
+#servicios .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#servicios .service-card {
+  background: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+#servicios .service-card:hover {
+  transform: translateY(-10px);
+}
+#servicios .service-card img {
+  width: 100%;
+  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#servicios .service-card h3 {
+  padding: 1.5rem 1.5rem 0.5rem;
+  color: #1f456f;
+  font-size: 1.4rem;
+}
+#servicios .service-card p {
+  padding: 0 1.5rem 2rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+#confianza {
+  background-color: #f8f8f8;
+  padding: 6rem 2rem;
+}
+#confianza h2 {
+  color: #1f456f;
+  margin-bottom: 3rem;
+}
+
+.counters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  text-align: center;
+}
+
+.counter-item {
+  padding: 1.5rem;
+}
+.counter-item .counter-number {
+  font-family: "Roboto Slab", serif;
+  font-size: 3rem;
+  color: #daa520;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.counter-item p {
+  font-size: 1rem;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#proyectos {
+  padding: 5rem 1rem;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+#proyectos h2 {
+  color: #1f456f;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+#proyectos .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#proyectos .project-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#proyectos .project-card img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+#proyectos .project-card:hover img {
+  transform: scale(1.1);
+}
+#proyectos .project-card .project-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(31, 69, 111, 0.9);
+  padding: 1rem;
+  color: #fff;
+  text-align: left;
+}
+#proyectos .project-card .project-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #daa520;
+}
+#proyectos .project-card .project-info p {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+#contacto {
+  padding: 5rem 1rem;
+  background-color: #1f456f;
+  color: #fff;
+  text-align: center;
+}
+#contacto h2 {
+  color: #fff;
+  margin-bottom: 2rem;
+}
+#contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#contacto form input,
+#contacto form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+#contacto form input:focus,
+#contacto form textarea:focus {
+  outline: 3px solid #daa520;
+}
+#contacto form button {
+  margin-top: 1rem;
+  align-self: center;
+  min-width: 200px;
+}

@@ -1,59 +1,62 @@
-// /scss/components/_projects.scss
-
 #proyectos {
-  background-color: $color-primary; // Fondo azul oscuro para contrastar
-  color: $color-light; // Texto claro por defecto
-  padding-bottom: 6rem;
+  padding: 5rem 1rem;
+  background-color: $color-light; // Un fondo gris clarito para diferenciar sección
+  text-align: center;
 
   h2 {
-    color: $color-light; // Título en color claro
-  }
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-  padding-top: 2rem;
-}
-
-.project-card {
-  background-color: $color-light; // Tarjeta blanca
-  text-align: left;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-
-  // Interacción
-  transition: transform 0.4s ease;
-
-  &:hover {
-    transform: translateY(-8px); // Se levanta
+    color: $color-primary;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
   }
 
-  img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .project-details {
-    padding: 1.5rem;
+  .project-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    h3 {
-      font-family: $font-headings;
-      color: $color-primary; // Azul oscuro
-      margin-bottom: 0.5rem;
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
     }
 
-    p {
-      color: $color-text;
-      margin-bottom: 1rem;
+    // Efecto Zoom en la foto
+    &:hover img {
+      transform: scale(1.1);
     }
 
-    .btn--secondary {
-      border-color: $color-primary;
-      color: $color-primary;
+    .project-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(31, 69, 111, 0.9); // Azul transparente
+      padding: 1rem;
+      color: #fff;
+      text-align: left;
+
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: $color-accent; // Título dorado
+      }
+
+      p {
+        margin: 0.2rem 0 0;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
     }
   }
 }

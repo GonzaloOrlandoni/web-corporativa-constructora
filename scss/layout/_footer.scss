@@ -1,53 +1,22 @@
-// /scss/layout/_footer.scss
-
 footer {
-  background-color: $color-primary; // Azul oscuro corporativo
-  color: $color-light;
-  padding: 3rem 0 1rem 0;
-}
-
-.footer-grid {
-  display: grid;
-  /* 3 columnas flexibles */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
-  padding: 0 5%;
-  max-width: $max-width; // Usa tu variable de ancho máximo
-  margin: 0 auto;
-}
-
-.footer-column h4 {
-  color: $color-accent; // Títulos en Dorado/Acento
-  font-family: $font-headings;
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column a,
-.footer-column p {
-  color: $color-secondary; // Gris claro para el texto
-  text-decoration: none;
-  line-height: 1.8;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: $color-accent;
-  }
-
-  i {
-    margin-right: 0.5rem;
-  }
-}
-
-.footer-bottom {
+  background-color: darken($color-primary, 10%); // Un azul casi negro
+  color: rgba(255, 255, 255, 0.6);
+  padding: 3rem 1rem;
   text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba($color-secondary, 0.2); // Separador sutil
-  margin-top: 2rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+
+  .footer-socials {
+    margin-top: 1rem;
+
+    a {
+      color: $color-accent;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

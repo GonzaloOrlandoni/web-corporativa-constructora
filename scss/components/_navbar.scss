@@ -1,54 +1,81 @@
-// /scss/components/_navbar.scss
-
 #navbar {
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
-
+  width: 100%;
+  height: 80px; // Altura fija
+  background-color: $color-primary; // Tu azul oscuro
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  background-color: $color-primary;
-  box-shadow: 0 2px 5px rgba($color-text, 0.4);
+  .logo {
+    font-family: $font-headings;
+    color: $color-light;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
 
-  ul {
-    list-style: none;
+  nav ul {
     display: flex;
-    gap: 1.5rem;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 
     a {
-      color: $color-light;
+      color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
 
       &:hover {
-        color: $color-accent;
+        color: $color-accent; // Dorado al pasar el mouse
       }
+    }
+  }
+
+  // Estilo específico para el botón "Contactar" dentro del menú
+  .btn--cta {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid $color-accent;
+    color: $color-accent !important; // Forzamos el color
+    border-radius: 4px;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-primary !important;
     }
   }
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: $color-light;
-  text-decoration: none;
+// Ocultamos la hamburguesa en escritorio
+.hamburger {
+  display: none;
 }
 
-// Media Query para móvil
-@include mobile {
-  #navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
+// Responsive básico para menú
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+  }
+
+  #nav-links {
+    display: none; // Aquí necesitarías JS para mostrarlo, pero por ahora lo ocultamos en móvil para que no rompa
   }
 }
