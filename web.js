@@ -1,56 +1,71 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // --- MENÚ HAMBURGUESA ---
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", function () {
+  // ==========================================
+  // 1. MENÚ HAMBURGUESA (Para Versión Móvil)
+  // ==========================================
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
 
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", () => {
+      // Alternar clase para mostrar/ocultar menú
       navLinks.classList.toggle("show");
-      const isExpanded = navLinks.classList.contains("show");
-      hamburger.setAttribute("aria-expanded", isExpanded);
-    });
-  } // --- FAQ INTERACTIVO (ACORDEÓN) ---
 
-  const faqItems = document.querySelectorAll(".faq-item");
-
-  faqItems.forEach((item) => {
-    const header = item.querySelector("h3");
-    if (header) {
-      header.addEventListener("click", () => {
-        const isActive = item.classList.contains("active");
-        item.classList.toggle("active");
-        header.setAttribute("aria-expanded", !isActive);
-      });
-    }
-  }); // --- TOGGLE MENSUAL/ANUAL ---
-
-  const monthlyBtn = document.getElementById("monthly-btn");
-  const annualBtn = document.getElementById("annual-btn");
-  const prices = document.querySelectorAll(".plan-card .price");
-
-  if (monthlyBtn && annualBtn && prices.length > 0) {
-    function updatePrices(period) {
-      prices.forEach((priceElement) => {
-        if (priceElement.dataset[period]) {
-          priceElement.textContent = priceElement.dataset[period];
-        }
-      });
-    }
-
-    monthlyBtn.addEventListener("click", () => {
-      monthlyBtn.classList.add("active");
-      annualBtn.classList.remove("active");
-      updatePrices("monthly");
-    });
-
-    annualBtn.addEventListener("click", () => {
-      annualBtn.classList.add("active");
-      monthlyBtn.classList.remove("active");
-      updatePrices("annual");
+      // Opcional: Animación del icono hamburguesa
+      hamburger.classList.toggle("active");
     });
   }
 
-  // --- CARRUSEL DE TESTIMONIOS ---
-  // El carrusel ahora es 100% CSS (ver style.css)
-  // No se necesita JavaScript, lo que elimina el lag/traba.
+  // ==========================================
+  // 2. BOTÓN SCROLL TO TOP (Volver Arriba)
+  // ==========================================
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  if (scrollTopBtn) {
+    // Escuchar el evento de scroll de la ventana
+    window.addEventListener("scroll", () => {
+      // Si bajamos más de 300px, mostramos el botón
+      if (window.scrollY > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    });
+
+    // Al hacer clic, subir suavemente
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // ==========================================
+  // 3. ANIMACIÓN DE APARICIÓN (Scroll Reveal)
+  // ==========================================
+  const observerOptions = {
+    root: null, // Observar respecto a la ventana
+    rootMargin: "0px", // Sin márgenes extra
+    threshold: 0.1, // Se activa cuando el 10% del elemento es visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      // Si el elemento entra en pantalla
+      if (entry.isIntersecting) {
+        // Agregamos la clase que lo hace visible (definida en CSS)
+        entry.target.classList.add("is-visible");
+
+        // Dejamos de observar este elemento (ya apareció, no necesitamos más)
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Seleccionamos todos los elementos que tengan la clase 'fade-in-section'
+  const sections = document.querySelectorAll(".fade-in-section");
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
 });

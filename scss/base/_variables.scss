@@ -1,12 +1,11 @@
-// /scss/base/_variables.scss
+// PALETA DE COLORES "INDUSTRIAL MODERN"
+$color-primary: #2c3e50; // Gris Oscuro (Antracita) - Elegante y sólido
+$color-secondary: #34495e; // Un tono más claro para variaciones
+$color-accent: #e67e22; // Naranja Ladrillo/Seguridad - Moderno y llamativo
+$color-text: #333333; // Texto principal
+$color-light: #ecf0f1; // Blanco "Hormigón" (no es blanco puro, descansa la vista)
+$white: #ffffff; // Blanco puro para textos sobre fondos oscuros
 
-// Asegúrate de que todas las líneas terminen en punto y coma (;)
-$color-primary: #1f456f;
-$color-secondary: #c2c2c2;
-$color-accent: #daa520;
-$color-text: #333333;
-$color-light: #f8f8f8;
-
-// Tipografía
+// Tipografía (Mantenemos las que tenías, funcionan bien)
 $font-stack: "Montserrat", sans-serif;
 $font-headings: "Roboto Slab", serif;

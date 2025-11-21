@@ -32,17 +32,75 @@ h3 {
 // HERO SECTION (Imagen de fondo)
 // =========================================
 #hero {
-  height: 100vh; // Altura completa de la pantalla
+  height: 100vh;
   width: 100%;
   position: relative;
-
-  // IMPORTANTE: La ruta lleva '../' para salir de la carpeta css
-  background: url("../img/hero-constructora.jpg") center/cover no-repeat;
+  overflow: hidden;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  // 1. FONDO (ESTÁTICO AHORA)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/hero-constructora.jpg') center/cover no-repeat;
+    z-index: -1;
+    // Ya no hay animación aquí
+  }
+}
+
+// 2. CONTENIDO QUE "RESPIRA"
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+
+  // Aquí aplicamos la magia
+  // 3s = tiempo de inhalar/exhalar
+  // infinite alternate = va y vuelve
+  animation: textBreathing 3s ease-in-out infinite alternate;
+
+  h1 {
+    font-size: 3.5rem;
+    color: $white;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5); // Sombra para leer mejor
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $color-light;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  }
+}
+
+// 3. DEFINICIÓN DE LA RESPIRACIÓN
+@keyframes textBreathing {
+  0% {
+    transform: scale(1); // Tamaño normal
+  }
+  100% {
+    transform: scale(1.05); // Crece un 5% (Sutil, si pones 1.1 o 1.2 marea)
+  }
+}
+
+// Overlay (Capa oscura)
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.4));
+  z-index: 1;
 }
 
 // Capa oscura encima de la foto para que se lea el texto
@@ -52,9 +110,9 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); // 60% de oscuridad
+  // Degradado de izquierda (oscuro) a derecha (más transparente)
+  background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.4));
 }
-
 // El texto y botones
 .hero-content {
   position: relative;
@@ -71,4 +129,23 @@ h3 {
     color: $color-light;
     margin-bottom: 2rem;
   }
+}
+
+// =========================================
+// ANIMACIÓN SCROLL (Aparición)
+// =========================================
+
+// 1. ESTADO INICIAL (Invisible y desplazado)
+.fade-in-section {
+  opacity: 0;                 // Invisible
+  transform: translateY(50px); // Empujado 50px hacia abajo
+  transition: opacity 1s ease-out, transform 1s ease-out; // Tarda 1 segundo en aparecer
+  will-change: opacity, transform;
+}
+
+// 2. ESTADO FINAL (Visible y en su lugar)
+// Esta clase la agrega JavaScript cuando bajas con el scroll
+.fade-in-section.is-visible {
+  opacity: 1;                 // Totalmente visible
+  transform: translateY(0);    // Vuelve a su posición original
 }

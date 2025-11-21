@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Constructora | Solidez y Confianza</title>
+    <title>Constructora | Solidez y Diseño</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -16,118 +16,127 @@
   </head>
   <body>
     <header id="navbar">
-      <a href="#" class="logo">CONSTRUCTORA</a>
+      <div class="nav-container">
+        <a href="#" class="logo">CONSTRUCTORA<span>.</span></a>
 
-      <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto" class="btn btn--cta">Contactar</a></li>
-        </ul>
-      </nav>
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto" class="btn btn--cta">Contactar</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <section id="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1>Construimos el Futuro</h1>
-        <p>Calidad, seguridad y compromiso en cada obra.</p>
-        <a href="#proyectos" class="btn btn--primary">Ver Proyectos</a>
+        <p>Ingeniería de vanguardia y diseño industrial sostenible.</p>
+        <a href="#proyectos" class="btn btn--primary">Ver Nuestros Proyectos</a>
       </div>
     </section>
 
     <main class="main-container">
-      <section id="servicios">
-        <h2>Nuestros Servicios</h2>
+      <section id="servicios" class="fade-in-section">
+        <h2>Soluciones Integrales</h2>
         <div class="services-grid">
           <article class="service-card">
-            <img src="img/viviendas-residenciales.jpg" alt="Construcción Residencial" />
-            <h3>Viviendas Residenciales</h3>
-            <p>Diseño y construcción de hogares modernos y funcionales.</p>
+            <img src="img/viviendas-residenciales.jpg" alt="Residencial" />
+            <div class="card-content">
+              <h3>Residencial Premium</h3>
+              <p>Desarrollos habitacionales con acabados de primera calidad.</p>
+            </div>
           </article>
 
           <article class="service-card">
-            <img src="img/construccion-industrial.jpg" alt="Construcción Industrial" />
-            <h3>Naves Industriales</h3>
-            <p>Soluciones robustas para fábricas y centros logísticos.</p>
+            <img src="img/construccion-industrial.jpg" alt="Industrial" />
+            <div class="card-content">
+              <h3>Naves Industriales</h3>
+              <p>Infraestructura robusta para el sector logístico y fabril.</p>
+            </div>
           </article>
 
           <article class="service-card">
-            <img src="img/infraestructura-civil.jpg" alt="Infraestructura Civil" />
-            <h3>Obra Civil</h3>
-            <p>Desarrollo de infraestructura pública y privada.</p>
+            <img src="img/infraestructura-civil.jpg" alt="Obra Civil" />
+            <div class="card-content">
+              <h3>Obra Civil</h3>
+              <p>Pavimentación, puentes y planificación urbana sostenible.</p>
+            </div>
           </article>
         </div>
       </section>
 
-      <section id="counters" class="counters-section">
+      <section id="counters" class="counters-section fade-in-section">
         <div class="counter-item">
           <span class="number">15+</span>
-          <p>Años de Experiencia</p>
+          <p>Años Operando</p>
         </div>
         <div class="counter-item">
-          <span class="number">120+</span>
-          <p>Proyectos Entregados</p>
+          <span class="number">120</span>
+          <p>Obras Finalizadas</p>
         </div>
         <div class="counter-item">
-          <span class="number">50+</span>
-          <p>Profesionales</p>
+          <span class="number">100%</span>
+          <p>Clientes Satisfechos</p>
         </div>
       </section>
 
-      <section id="proyectos">
-        <h2>Proyectos Recientes</h2>
+      <section id="proyectos" class="fade-in-section">
+        <h2>Proyectos Destacados</h2>
         <div class="projects-grid">
           <div class="project-card">
-            <img src="img/proyecto-edificio.jpg" alt="Edificio Urbano" />
+            <img src="img/proyecto-edificio.jpg" alt="Edificio" />
             <div class="project-info">
-              <h3>Edificio Altos</h3>
-              <p>Residencial</p>
+              <h3>Torre Vanguardia</h3>
+              <p>Oficinas Corporativas</p>
             </div>
           </div>
 
           <div class="project-card">
-            <img src="img/proyecto-logistico.jpg" alt="Centro Logístico" />
+            <img src="img/proyecto-logistico.jpg" alt="Logística" />
             <div class="project-info">
-              <h3>Centro Logístico Norte</h3>
+              <h3>Centro Distribución Sur</h3>
               <p>Industrial</p>
             </div>
           </div>
 
           <div class="project-card">
-            <img src="img/ingeniero-planos.jpg" alt="Planificación" />
+            <img src="img/ingeniero-planos.jpg" alt="Ingeniería" />
             <div class="project-info">
-              <h3>Planificación Urbana</h3>
-              <p>Ingeniería</p>
+              <h3>Plan Maestro Urbano</h3>
+              <p>Consultoría</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contacto">
-        <h2>Hablemos de tu Proyecto</h2>
+      <section id="contacto" class="fade-in-section">
+        <h2>Inicia tu Proyecto</h2>
         <form action="#" method="POST">
-          <input type="text" placeholder="Tu Nombre" required />
-          <input type="email" placeholder="Tu Email" required />
-          <textarea rows="5" placeholder="¿Cómo podemos ayudarte?" required></textarea>
-          <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
+          <input type="text" placeholder="Nombre Completo" required />
+          <input type="email" placeholder="Correo Electrónico" required />
+          <textarea rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+          <button type="submit" class="btn btn--primary">Enviar Consulta</button>
         </form>
       </section>
     </main>
 
     <footer>
       <div class="footer-content">
-        <p>&copy; 2025 Constructora S.A. Todos los derechos reservados.</p>
-        <div class="footer-socials"><a href="#">Instagram</a> | <a href="#">LinkedIn</a></div>
+        <p>&copy; 2025 Constructora. Arquitectura e Ingeniería.</p>
       </div>
     </footer>
+
+    <button id="scrollTopBtn" title="Volver arriba">▲</button>
 
     <script src="web.js"></script>
   </body>
