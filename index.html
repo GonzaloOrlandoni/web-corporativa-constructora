@@ -1,214 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
-   
   <head>
-       
     <meta charset="UTF-8" />
-       
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       
     <title>GO CONSTRUCCIONES | Web Corporativa</title>
-           
+
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
       rel="stylesheet"
     />
-           
+
     <link rel="stylesheet" href="css/main.css" />
-           
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-     
   </head>
-   
   <body>
-       
     <header>
-           
       <nav id="navbar">
-                <a href="#hero" class="logo">GO CONSTRUCCIONES</a>        
+        <a href="#hero" class="logo">GO CONSTRUCCIONES</a>
         <ul>
-                   
           <li><a href="#especialidades">Especialidades</a></li>
-                   
           <li><a href="#proyectos">Proyectos</a></li>
-                   
           <li><a href="#confianza">Nuestra Solidez</a></li>
-                   
           <li><a href="#contacto" class="btn btn--primary">CONTACTAR</a></li>
-                 
         </ul>
-               
         <button id="theme-toggle" class="btn--icon" aria-label="Cambiar tema oscuro/claro">
-                  <i class="fas fa-moon"></i>        
+          <i class="fas fa-moon"></i>
         </button>
-             
       </nav>
-         
     </header>
 
-       
     <main class="main-content-wrapper">
-           
       <section id="hero">
-               
-        <div class="hero-content">
-                   
+        <div class="hero-content" data-aos="fade-in" data-aos-duration="1000">
           <h1>Expertos en Construcción y Diseño</h1>
-                   
           <p>Innovación y solidez en cada proyecto.</p>
-                    <a href="#proyectos" class="btn btn--primary">VER PROYECTOS</a>        
+          <a href="#proyectos" class="btn btn--primary">VER PROYECTOS</a>
         </div>
-               
         <div class="hero-overlay"></div>
-             
       </section>
 
-           
       <section id="especialidades">
-               
         <h2 data-aos="fade-up">Nuestras Especialidades</h2>
-               
         <div class="main-container">
-                   
           <div class="services-grid">
-                       
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                            <img src="img/construccion-industrial.jpg" alt="Construcción Industrial" />              
+              <img src="img/construccion-industrial.jpg" alt="Construcción Industrial" />
               <h3>Construcción Industrial</h3>
-                           
               <p>Diseño y ejecución de centros logísticos y plantas de producción con máxima eficiencia.</p>
-                         
             </div>
-                       
             <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                            <img src="img/infraestructura-civil.jpg" alt="Infraestructura Civil" />              
+              <img src="img/infraestructura-civil.jpg" alt="Infraestructura Civil" />
               <h3>Infraestructura Civil</h3>
-                           
               <p>Proyectos de urbanismo, puentes, y obras viales, garantizando calidad y durabilidad en el tiempo.</p>
-                         
             </div>
-                       
             <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                            <img src="img/viviendas-residenciales.jpg" alt="Viviendas Residenciales de Lujo" />        
-                   
+              <img src="img/viviendas-residenciales.jpg" alt="Viviendas Residenciales de Lujo" />
               <h3>Viviendas Residenciales</h3>
-                           
               <p>Construcción de complejos de alto estándar y viviendas unifamiliares con acabados premium.</p>
-                         
             </div>
-                     
           </div>
-                 
         </div>
-             
       </section>
 
-           
       <section id="confianza">
-               
         <h2 data-aos="fade-up">Nuestra Solidez en Números</h2>
-               
         <div class="main-container">
-                   
           <div class="counters-grid">
-                       
             <div class="counter-item" data-aos="fade-up" data-aos-delay="100">
-                           
               <div class="counter-number">15+</div>
-                           
               <p>Años de Experiencia en el Sector</p>
-                         
             </div>
-                       
             <div class="counter-item" data-aos="fade-up" data-aos-delay="200">
-                           
               <div class="counter-number">120</div>
-                           
               <p>Proyectos Terminados Exitosamente</p>
-                         
             </div>
-                       
             <div class="counter-item" data-aos="fade-up" data-aos-delay="300">
-                           
               <div class="counter-number">98%</div>
-                           
               <p>Clientes Satisfechos y Recurrentes</p>
-                         
             </div>
-                     
           </div>
-                 
         </div>
-             
       </section>
 
-           
       <section id="proyectos">
-               
         <h2 data-aos="fade-up">Proyectos Recientes</h2>
-               
         <div class="main-container">
-                   
           <div class="projects-grid">
-                       
             <div class="project-card" data-aos="fade-up">
-                            <img src="img/proyecto-edificio.jpg" alt="Edificio Corporativo" />              
+              <img src="img/proyecto-edificio.jpg" alt="Edificio Corporativo" />
               <div class="project-details">
-                               
                 <h3>Edificio Corporativo Central</h3>
-                               
                 <p>
                   Diseño y construcción de un complejo de oficinas de 10 pisos. Foco en eficiencia energética y
                   sostenibilidad.
                 </p>
-                                <a href="#" class="btn btn--secondary">Ver Detalles</a>              
+                <a href="#" class="btn btn--secondary">Ver Detalles</a>
               </div>
-                         
             </div>
-                       
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                            <img src="img/proyecto-logistico.jpg" alt="Centro Logístico" />              
+              <img src="img/proyecto-logistico.jpg" alt="Centro Logístico" />
               <div class="project-details">
-                               
                 <h3>Centro Logístico A-5</h3>
-                               
                 <p>
                   Nave industrial de 5,000 m² con control automatizado de inventario y acceso vial directo. Entrega a
                   tiempo garantizada.
                 </p>
-                                <a href="#" class="btn btn--secondary">Ver Detalles</a>              
+                <a href="#" class="btn btn--secondary">Ver Detalles</a>
               </div>
-                         
             </div>
-                     
           </div>
-                 
         </div>
-             
       </section>
 
-           
       <section id="contacto">
-               
         <div class="main-container">
-                   
           <h2>Contáctanos para tu Proyecto</h2>
-                   
           <p>Expertos en soluciones de construcción. Hablemos de su necesidad y presupuesto sin compromiso.</p>
 
-                   
           <form class="contact-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
-                        <label for="name">Nombre Completo</label>            
+            <label for="name">Nombre Completo</label>
             <input type="text" id="name" name="Nombre" required placeholder="Ej: Juan Pérez" />
 
-                        <label for="email">Correo Electrónico</label>            
+            <label for="email">Correo Electrónico</label>
             <input type="email" id="email" name="Email" required placeholder="contacto@empresa.com" />
 
-                        <label for="subject">Asunto</label>            
+            <label for="subject">Asunto</label>
             <input type="text" id="subject" name="Asunto" required placeholder="Presupuesto para Obra Civil" />
 
-                        <label for="message">Mensaje / Detalle del Proyecto</label>            
+            <label for="message">Mensaje / Detalle del Proyecto</label>
             <textarea
               id="message"
               name="Mensaje"
@@ -217,49 +139,15 @@
               placeholder="Describa brevemente su proyecto..."
             ></textarea>
 
-                        <button type="submit" class="btn btn--primary">Solicitar Presupuesto</button>          
+            <button type="submit" class="btn btn--primary">Solicitar Presupuesto</button>
           </form>
-                 
         </div>
-             
       </section>
-         
     </main>
 
-       
-</main>
-
     <footer>
-        <div class="footer-grid">
-            <div class="footer-column footer-brand">
-                <h4>GO CONSTRUCCIONES</h4>
-                <p>Innovación, calidad y solidez en cada fase de su proyecto. Transformamos visiones en estructuras duraderas.</p>
-                <a href="#contacto" class="btn btn--secondary">Trabaja con Nosotros</a>
-            </div>
-
-            <div class="footer-column">
-                <h4>Servicios Clave</h4>
-                <ul>
-                    <li><a href="#especialidades">Construcción Industrial</a></li>
-                    <li><a href="#especialidades">Infraestructura Civil</a></li>
-                    <li><a href="#especialidades">Viviendas Residenciales</a></li>
-                    <li><a href="#proyectos">Portafolio</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Contacto</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Buenos Aires, Argentina</p>
-                <p><i class="fas fa-envelope"></i> info@goconstrucciones.com</p>
-                <p><i class="fas fa-phone"></i> +54 9 11 1234 5678</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 GO Construcciones. Todos los derechos reservados. Desarrollado con SASS.</p>
-        </div>
+      <p>&copy; 2025 GO Construcciones. Desarrollado con SASS.</p>
     </footer>
-    </body>
-</html>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="web.js"></script>
