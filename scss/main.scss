@@ -1,18 +1,17 @@
 // scss/main.scss
-// ESTE ES EL MANIFIESTO FINAL DEL PROYECTO CONSTRUCTORA
 
-// 1. BASE: VARIABLES y MIXINS (Debe ir primero)
+// 1. BASE: VARIABLES y MIXINS
 @import "base/variables";
 @import "base/mixins";
 
 // 2. LAYOUT Y ESTILOS GLOBALES
-@import "layout/global"; // Contiene Body, h1, h2, y .main-content-wrapper
-@import "layout/footer"; // Contiene estilos del Footer
+@import "layout/global";
+@import "layout/footer";
 
 // 3. COMPONENTES Y SECCIONES
 @import "components/navbar";
 @import "components/buttons";
-@import "components/services"; // Especialidades
-@import "components/counters"; // Estadísticas de Confianza
-@import "components/projects"; // Proyectos Recientes
-@import "components/contact"; // Formulario de Contacto
+@import "components/services";
+@import "components/counters";
+@import "components/projects";
+@import "components/contact";

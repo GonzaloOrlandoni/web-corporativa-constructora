@@ -1,15 +1,11 @@
-// Paleta de una constructora: Azul de Confianza y Gris de Estabilidad
-$color-primary: #1f456f; // Azul Oscuro (Primario, se mantiene en ambos modos)
-$color-secondary: #c2c2c2; // Gris para líneas y bordes
-$color-accent: #daa520; // Dorado/Amarillo (Acento, se mantiene)
+// /scss/base/_variables.scss
 
-// -- PALETA PARA TEMA CLARO (LIGHT MODE)
-$light-bg: #f8f8f8; // Fondo principal CLARO
-$light-text: #333333; // Texto principal OSCURO
-
-// -- PALETA PARA TEMA OSCURO (DARK MODE)
-$dark-bg: #121212; // Fondo principal OSCURO (casi negro)
-$dark-text: #f0f0f0; // Texto principal CLARO
+// Asegúrate de que todas las líneas terminen en punto y coma (;)
+$color-primary: #1f456f;
+$color-secondary: #c2c2c2;
+$color-accent: #daa520;
+$color-text: #333333;
+$color-light: #f8f8f8;
 
 // Tipografía
 $font-stack: "Montserrat", sans-serif;

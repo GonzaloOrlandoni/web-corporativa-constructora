@@ -1,4 +1,5 @@
 // /scss/components/_navbar.scss
+// ESTILOS PARA LA BARRA DE NAVEGACIÓN
 
 #navbar {
   position: fixed;
@@ -13,12 +14,14 @@
   z-index: 1000;
 
   background-color: $color-primary; // Fondo azul oscuro
-  box-shadow: 0 2px 5px rgba($color-text, 0.4); // Sombra sutil y visible
+  box-shadow: 0 2px 5px rgba($color-text, 0.4);
 
   // Estilos para la lista de navegación
-  nav ul {
+  ul {
+    list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: center;
 
     a {
       color: $color-light; // Enlaces en blanco/claro
@@ -38,25 +41,30 @@
   font-weight: 700;
   color: $color-light; // Logo en blanco/claro
   text-decoration: none;
-
-  @include mobile {
-    font-size: 1.2rem;
-  }
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+// Estilos del botón icono (Dark Mode Toggle)
+#theme-toggle {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  background-color: $color-accent;
+  color: $color-primary;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  a {
-    color: $color-secondary; // Enlaces en gris claro
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-
-    &:hover {
-      color: $color-accent; // Acento dorado al pasar el mouse
-    }
+// Media Query para pantallas pequeñas
+@include mobile {
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
