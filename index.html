@@ -3,154 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GO CONSTRUCCIONES | Web Corporativa</title>
+    <title>Constructora | Solidez y Confianza</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="css/main.css" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
-    <header>
-      <nav id="navbar">
-        <a href="#hero" class="logo">GO CONSTRUCCIONES</a>
-        <ul>
-          <li><a href="#especialidades">Especialidades</a></li>
+    <header id="navbar">
+      <a href="#" class="logo">CONSTRUCTORA</a>
+
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#confianza">Nuestra Solidez</a></li>
-          <li><a href="#contacto" class="btn btn--primary">CONTACTAR</a></li>
+          <li><a href="#contacto" class="btn btn--cta">Contactar</a></li>
         </ul>
-        <button id="theme-toggle" class="btn--icon" aria-label="Cambiar tema oscuro/claro">
-          <i class="fas fa-moon"></i>
-        </button>
       </nav>
     </header>
 
-    <main class="main-content-wrapper">
-      <section id="hero">
-        <div class="hero-content" data-aos="fade-in" data-aos-duration="1000">
-          <h1>Expertos en Construcción y Diseño</h1>
-          <p>Innovación y solidez en cada proyecto.</p>
-          <a href="#proyectos" class="btn btn--primary">VER PROYECTOS</a>
+    <section id="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Construimos el Futuro</h1>
+        <p>Calidad, seguridad y compromiso en cada obra.</p>
+        <a href="#proyectos" class="btn btn--primary">Ver Proyectos</a>
+      </div>
+    </section>
+
+    <main class="main-container">
+      <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+          <article class="service-card">
+            <img src="img/viviendas-residenciales.jpg" alt="Construcción Residencial" />
+            <h3>Viviendas Residenciales</h3>
+            <p>Diseño y construcción de hogares modernos y funcionales.</p>
+          </article>
+
+          <article class="service-card">
+            <img src="img/construccion-industrial.jpg" alt="Construcción Industrial" />
+            <h3>Naves Industriales</h3>
+            <p>Soluciones robustas para fábricas y centros logísticos.</p>
+          </article>
+
+          <article class="service-card">
+            <img src="img/infraestructura-civil.jpg" alt="Infraestructura Civil" />
+            <h3>Obra Civil</h3>
+            <p>Desarrollo de infraestructura pública y privada.</p>
+          </article>
         </div>
-        <div class="hero-overlay"></div>
       </section>
 
-      <section id="especialidades">
-        <h2 data-aos="fade-up">Nuestras Especialidades</h2>
-        <div class="main-container">
-          <div class="services-grid">
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-              <img src="img/construccion-industrial.jpg" alt="Construcción Industrial" />
-              <h3>Construcción Industrial</h3>
-              <p>Diseño y ejecución de centros logísticos y plantas de producción con máxima eficiencia.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-              <img src="img/infraestructura-civil.jpg" alt="Infraestructura Civil" />
-              <h3>Infraestructura Civil</h3>
-              <p>Proyectos de urbanismo, puentes, y obras viales, garantizando calidad y durabilidad en el tiempo.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-              <img src="img/viviendas-residenciales.jpg" alt="Viviendas Residenciales de Lujo" />
-              <h3>Viviendas Residenciales</h3>
-              <p>Construcción de complejos de alto estándar y viviendas unifamiliares con acabados premium.</p>
-            </div>
-          </div>
+      <section id="counters" class="counters-section">
+        <div class="counter-item">
+          <span class="number">15+</span>
+          <p>Años de Experiencia</p>
         </div>
-      </section>
-
-      <section id="confianza">
-        <h2 data-aos="fade-up">Nuestra Solidez en Números</h2>
-        <div class="main-container">
-          <div class="counters-grid">
-            <div class="counter-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="counter-number">15+</div>
-              <p>Años de Experiencia en el Sector</p>
-            </div>
-            <div class="counter-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-number">120</div>
-              <p>Proyectos Terminados Exitosamente</p>
-            </div>
-            <div class="counter-item" data-aos="fade-up" data-aos-delay="300">
-              <div class="counter-number">98%</div>
-              <p>Clientes Satisfechos y Recurrentes</p>
-            </div>
-          </div>
+        <div class="counter-item">
+          <span class="number">120+</span>
+          <p>Proyectos Entregados</p>
+        </div>
+        <div class="counter-item">
+          <span class="number">50+</span>
+          <p>Profesionales</p>
         </div>
       </section>
 
       <section id="proyectos">
-        <h2 data-aos="fade-up">Proyectos Recientes</h2>
-        <div class="main-container">
-          <div class="projects-grid">
-            <div class="project-card" data-aos="fade-up">
-              <img src="img/proyecto-edificio.jpg" alt="Edificio Corporativo" />
-              <div class="project-details">
-                <h3>Edificio Corporativo Central</h3>
-                <p>
-                  Diseño y construcción de un complejo de oficinas de 10 pisos. Foco en eficiencia energética y
-                  sostenibilidad.
-                </p>
-                <a href="#" class="btn btn--secondary">Ver Detalles</a>
-              </div>
+        <h2>Proyectos Recientes</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="img/proyecto-edificio.jpg" alt="Edificio Urbano" />
+            <div class="project-info">
+              <h3>Edificio Altos</h3>
+              <p>Residencial</p>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-              <img src="img/proyecto-logistico.jpg" alt="Centro Logístico" />
-              <div class="project-details">
-                <h3>Centro Logístico A-5</h3>
-                <p>
-                  Nave industrial de 5,000 m² con control automatizado de inventario y acceso vial directo. Entrega a
-                  tiempo garantizada.
-                </p>
-                <a href="#" class="btn btn--secondary">Ver Detalles</a>
-              </div>
+          </div>
+
+          <div class="project-card">
+            <img src="img/proyecto-logistico.jpg" alt="Centro Logístico" />
+            <div class="project-info">
+              <h3>Centro Logístico Norte</h3>
+              <p>Industrial</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="img/ingeniero-planos.jpg" alt="Planificación" />
+            <div class="project-info">
+              <h3>Planificación Urbana</h3>
+              <p>Ingeniería</p>
             </div>
           </div>
         </div>
       </section>
 
       <section id="contacto">
-        <div class="main-container">
-          <h2>Contáctanos para tu Proyecto</h2>
-          <p>Expertos en soluciones de construcción. Hablemos de su necesidad y presupuesto sin compromiso.</p>
-
-          <form class="contact-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
-            <label for="name">Nombre Completo</label>
-            <input type="text" id="name" name="Nombre" required placeholder="Ej: Juan Pérez" />
-
-            <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="Email" required placeholder="contacto@empresa.com" />
-
-            <label for="subject">Asunto</label>
-            <input type="text" id="subject" name="Asunto" required placeholder="Presupuesto para Obra Civil" />
-
-            <label for="message">Mensaje / Detalle del Proyecto</label>
-            <textarea
-              id="message"
-              name="Mensaje"
-              rows="5"
-              required
-              placeholder="Describa brevemente su proyecto..."
-            ></textarea>
-
-            <button type="submit" class="btn btn--primary">Solicitar Presupuesto</button>
-          </form>
-        </div>
+        <h2>Hablemos de tu Proyecto</h2>
+        <form action="#" method="POST">
+          <input type="text" placeholder="Tu Nombre" required />
+          <input type="email" placeholder="Tu Email" required />
+          <textarea rows="5" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+          <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
+        </form>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 GO Construcciones. Desarrollado con SASS.</p>
+      <div class="footer-content">
+        <p>&copy; 2025 Constructora S.A. Todos los derechos reservados.</p>
+        <div class="footer-socials"><a href="#">Instagram</a> | <a href="#">LinkedIn</a></div>
+      </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="web.js"></script>
-     
   </body>
 </html>

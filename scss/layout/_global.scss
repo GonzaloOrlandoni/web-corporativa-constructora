@@ -1,0 +1,74 @@
+// /scss/layout/_global.scss
+
+body {
+  background-color: $color-light;
+  color: $color-text;
+  font-family: $font-stack;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-headings;
+  color: $color-primary;
+  margin-bottom: 0.5rem;
+}
+
+.main-content-wrapper {
+  padding-top: 5rem;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// =========================================
+// HERO SECTION (Imagen de fondo)
+// =========================================
+#hero {
+  height: 100vh; // Altura completa de la pantalla
+  width: 100%;
+  position: relative;
+
+  // IMPORTANTE: La ruta lleva '../' para salir de la carpeta css
+  background: url("../img/hero-constructora.jpg") center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+// Capa oscura encima de la foto para que se lea el texto
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); // 60% de oscuridad
+}
+
+// El texto y botones
+.hero-content {
+  position: relative;
+  z-index: 2; // Para que quede encima de la capa oscura
+
+  h1 {
+    font-size: 3rem;
+    color: $color-light; // Usamos tu variable de blanco
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $color-light;
+    margin-bottom: 2rem;
+  }
+}
