@@ -1,29 +1,33 @@
 // /scss/components/_services.scss
 
 #especialidades {
-  background-color: $color-light;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+#especialidades h2 {
+  margin-bottom: 2.5rem;
 }
 
 .services-grid {
   display: grid;
-  /* 3 columnas flexibles y responsivas */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  padding-top: 1rem;
 }
 
 .service-card {
   background-color: $color-light;
-  border: 1px solid $color-secondary; // Borde gris suave
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba($color-text, 0.1);
+  border-top: 5px solid $color-accent;
 
-  // Interacción
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px); // Se levanta
-    box-shadow: 0 8px 15px rgba($color-text, 0.2); // Sombra más notoria
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba($color-text, 0.2);
   }
 
   img {
@@ -35,34 +39,19 @@
   }
 
   h3 {
-    color: $color-primary; // Azul oscuro
+    color: $color-primary;
     font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $color-text;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn--secondary {
+    background-color: transparent;
+    color: $color-primary;
+    border-color: $color-primary;
   }
 }
-
-// /scss/components/_services.scss
-
-#especialidades {
-  position: relative; // Necesario para posicionar el pseudo-elemento
-  padding: 6rem 0 4rem 0;
-  text-align: center;
-  background-color: $color-light;
-
-  // NUEVO: Divisor Angulado
-  &::before {
-    @include slanted-divider($light-bg, -2deg); // Fondo claro, ángulo -2deg
-    top: -50px; // Sube un poco para que el ángulo se vea bien
-    z-index: 0;
-  }
-
-  // El contenido debe estar por encima del divisor
-  .main-container,
-  h2 {
-    position: relative;
-    z-index: 20;
-  }
-
-  // ... (El resto de tus estilos de #especialidades) ...
-}
-// Asegúrate de que $light-bg sea el color de fondo de la sección anterior o posterior
-// o usa un color de fondo fijo aquí si no es el mismo.

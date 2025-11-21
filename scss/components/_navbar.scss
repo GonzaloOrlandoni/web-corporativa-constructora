@@ -1,5 +1,4 @@
 // /scss/components/_navbar.scss
-// ESTILOS PARA LA BARRA DE NAVEGACIÓN
 
 #navbar {
   position: fixed;
@@ -8,29 +7,27 @@
   left: 0;
 
   display: flex;
-  justify-content: space-between; // Alinea logo a izq y menú a der
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   z-index: 1000;
 
-  background-color: $color-primary; // Fondo azul oscuro
+  background-color: $color-primary;
   box-shadow: 0 2px 5px rgba($color-text, 0.4);
 
-  // Estilos para la lista de navegación
   ul {
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    align-items: center;
 
     a {
-      color: $color-light; // Enlaces en blanco/claro
+      color: $color-light;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
 
       &:hover {
-        color: $color-accent; // Acento dorado al pasar el mouse
+        color: $color-accent;
       }
     }
   }
@@ -39,24 +36,11 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: $color-light; // Logo en blanco/claro
+  color: $color-light;
   text-decoration: none;
 }
 
-// Estilos del botón icono (Dark Mode Toggle)
-#theme-toggle {
-  margin-left: 1rem;
-  font-size: 1.2rem;
-  background-color: $color-accent;
-  color: $color-primary;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-// Media Query para pantallas pequeñas
+// Media Query para móvil
 @include mobile {
   #navbar {
     flex-direction: column;
