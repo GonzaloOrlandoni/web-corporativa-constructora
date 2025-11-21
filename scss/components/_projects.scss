@@ -1,7 +1,6 @@
 #proyectos {
   padding: 5rem 1rem;
-  background-color: $color-light; // Un fondo gris clarito para diferenciar sección
-  text-align: center;
+  text-align: center; // Esto centra el título principal de la sección (H2)
 
   h2 {
     color: $color-primary;
@@ -21,41 +20,58 @@
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer; // Manito al pasar el mouse
 
     img {
       width: 100%;
-      height: 300px;
+      height: 350px; // Un poco más altas para que se luzcan
       object-fit: cover;
       display: block;
       transition: transform 0.5s ease;
     }
 
-    // Efecto Zoom en la foto
     &:hover img {
       transform: scale(1.1);
     }
+
+// ... dentro de .project-card:hover img ...
+
+// ... dentro de .project-card ...
 
     .project-info {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: rgba(31, 69, 111, 0.9); // Azul transparente
-      padding: 1rem;
+
+      // Fondo oscuro con degradado
+      background: linear-gradient(to top, rgba(15, 44, 89, 0.95), rgba(15, 44, 89, 0.85));
+      padding: 1.5rem 1rem; // Un poco más de padding
       color: #fff;
-      text-align: left;
+
+      // --- MAGIA FLEXBOX PARA CENTRAR TODO ---
+      display: flex;
+      flex-direction: column; // Uno arriba del otro
+      justify-content: center; // Centrado Vertical
+      align-items: center;     // Centrado Horizontal
+      text-align: center;      // Respaldo
+      // ---------------------------------------
 
       h3 {
-        margin: 0;
-        font-size: 1.2rem;
-        color: $color-accent; // Título dorado
+        margin: 0 0 0.5rem 0; // Margen solo abajo
+        font-size: 1.3rem;
+        color: $color-accent; // Dorado
+        font-weight: 700;
+        line-height: 1.2;     // Evita que se separen mucho si tiene 2 líneas
       }
 
       p {
-        margin: 0.2rem 0 0;
-        font-size: 0.9rem;
-        opacity: 0.8;
+        margin: 0;
+        font-size: 0.85rem;
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
     }
   }

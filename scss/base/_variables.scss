@@ -1,11 +1,14 @@
-// PALETA DE COLORES "INDUSTRIAL MODERN"
-$color-primary: #2c3e50; // Gris Oscuro (Antracita) - Elegante y sólido
-$color-secondary: #34495e; // Un tono más claro para variaciones
-$color-accent: #e67e22; // Naranja Ladrillo/Seguridad - Moderno y llamativo
-$color-text: #333333; // Texto principal
-$color-light: #ecf0f1; // Blanco "Hormigón" (no es blanco puro, descansa la vista)
-$white: #ffffff; // Blanco puro para textos sobre fondos oscuros
+// scss/base/_variables.scss
 
-// Tipografía (Mantenemos las que tenías, funcionan bien)
-$font-stack: "Montserrat", sans-serif;
-$font-headings: "Roboto Slab", serif;
+// PALETA OPCIÓN B: "INGENIERÍA CORPORATIVA"
+$color-primary: #004e92;   // Azul Corporativo Profundo (Para fondos y títulos)
+$color-secondary: #505050; // Gris Oscuro (Para textos secundarios)
+$color-accent: #00b4db;    // Celeste Vibrante / Cian (Para botones y detalles)
+
+$color-text: #212529;      // Texto principal casi negro
+$color-light: #f8f9fa;     // Fondo claro
+$white: #ffffff;
+
+// Tipografías
+$font-headings: 'Barlow', sans-serif;
+$font-stack: 'Inter', sans-serif;

@@ -1,39 +1,118 @@
 #contacto {
   padding: 5rem 1rem;
-  background-color: $color-primary; // Sección oscura
-  color: #fff;
+  background-color: transparent;
   text-align: center;
+  position: relative;
 
   h2 {
-    color: #fff;
-    margin-bottom: 2rem;
+    color: $color-primary;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
   }
 
-  form {
+  .contact-intro {
     max-width: 600px;
+    margin: 0 auto 3rem;
+    color: $color-secondary;
+    font-size: 1.1rem;
+  }
+
+  .contact-form {
+    max-width: 800px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 
-    input,
-    textarea {
-      width: 100%;
-      padding: 1rem;
-      border: none;
-      border-radius: 4px;
-      font-family: $font-stack;
-      font-size: 1rem;
+    // --- AQUÍ ESTÁ LA CLAVE DE LA SEPARACIÓN ---
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Dos columnas de igual tamaño (50% - 50%)
+    column-gap: 2rem; // Espacio horizontal entre Nombre y Correo
+    row-gap: 1.5rem;  // Espacio vertical entre filas
+    // --------------------------------------------
 
-      &:focus {
-        outline: 3px solid $color-accent; // Borde dorado al escribir
+    background: $color-primary;
+    padding: 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      width: 100%; // Asegura que el div ocupe su celda del grid
+
+      // Esta clase hace que Asunto, Mensaje y Botón ocupen el 100% del ancho
+      &.full-width {
+        grid-column: 1 / -1; // Abarca desde la columna 1 hasta el final
       }
     }
 
+    // ESTILO DE LOS CAMPOS
+    input, textarea {
+      width: 100%; // Ocupa todo el espacio disponible en su celda
+      padding: 1.2rem;
+      background-color: #fff;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      color: #333;
+      font-family: $font-stack;
+      font-size: 1rem;
+      text-align: center; // Texto centrado como pediste antes
+      transition: all 0.3s ease;
+
+      // Aseguramos que se comporten bien las cajas
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: #999;
+        text-align: center;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $color-accent;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    // Asegurar que el textarea no se pueda estirar y romper el diseño
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    // BOTÓN
     button {
-      margin-top: 1rem;
-      align-self: center; // Centrar el botón
-      min-width: 200px;
+      width: 100%;
+      padding: 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      border-radius: 6px;
+      border: none;
+      background-color: $color-accent;
+      color: $white;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: lighten($color-accent, 10%);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // RESPONSIVE (MÓVIL)
+  @media (max-width: 768px) {
+    .contact-form {
+      grid-template-columns: 1fr; // En celular todo es 1 sola columna
+      padding: 2rem;
+      gap: 1rem;
+
+      // En móvil ya no necesitamos expandir columnas porque solo hay una
+      .form-group.full-width {
+        grid-column: span 1;
+      }
     }
   }
 }

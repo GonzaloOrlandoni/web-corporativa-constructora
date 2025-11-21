@@ -1,37 +1,95 @@
-// /scss/components/_counters.scss
+#counters {
+  background-color: $color-primary; // Fondo Gris Oscuro (Full Width)
+  padding: 5rem 0; // Espacio vertical generoso
+  color: $white;
+  position: relative;
+  margin-top: 2rem; // Separación de la sección anterior
 
-#confianza {
-  background-color: $color-light;
-  padding: 6rem 2rem;
+  // Sombrita sutil interna para darle volumen
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
 
-  h2 {
-    color: $color-primary;
-    margin-bottom: 3rem;
+  // EL CONTENEDOR FLEX (El que ordena los items)
+  .counters-container {
+    max-width: 1200px;  // Ancho máximo estándar
+    margin: 0 auto;     // Centrado en la pantalla
+    padding: 0 1rem;    // Margen de seguridad para móviles
+
+    display: flex;             // ¡ESTO LOS PONE EN FILA!
+    justify-content: space-between; // Los separa equitativamente
+    align-items: center;       // Los alinea verticalmente
+    flex-wrap: wrap;           // Permite que bajen si no hay espacio
+  }
+
+  // CADA CONTADOR INDIVIDUAL
+  .counter-item {
+    flex: 1; // Todos ocupan el mismo ancho
+    text-align: center;
+    position: relative;
+    min-width: 200px; // Para que no se aplasten en pantallas medianas
+
+    // LÍNEA SEPARADORA (Estilo técnico)
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 10%;
+      height: 80%; // La línea no llega hasta los bordes
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    // Quitamos la línea del último elemento
+    &:last-child::after {
+      display: none;
+    }
+
+    // EL NÚMERO Y EL SÍMBOLO
+    .number, .symbol {
+      font-family: $font-headings; // Fuente Robusta
+      font-size: 4rem;             // Tamaño gigante
+      font-weight: 700;
+      color: $color-accent;        // Naranja
+      display: inline-block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3); // Sombra para que "flote"
+    }
+
+    // EL TEXTO DEBAJO
+    p {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px; // Letras separadas (muy arquitectónico)
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+      margin: 0;
+    }
   }
 }
 
-.counters-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  text-align: center;
-}
+// =========================================
+// RESPONSIVE (CELULARES)
+// =========================================
+@media (max-width: 768px) {
+  #counters {
+    padding: 3rem 0;
 
-.counter-item {
-  padding: 1.5rem;
+    .counters-container {
+      flex-direction: column; // En celular, uno debajo del otro
+      gap: 3rem; // Espacio entre ellos
+    }
 
-  .counter-number {
-    font-family: $font-headings;
-    font-size: 3rem;
-    color: $color-accent; // Dorado para el número
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
+    .counter-item {
+      width: 100%; // Ocupan todo el ancho
 
-  p {
-    font-size: 1rem;
-    color: $color-text;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+      // Quitamos la línea vertical
+      &::after { display: none; }
+
+      // Ponemos una línea horizontal abajo
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 2rem;
+
+      &:last-child { border-bottom: none; }
+    }
   }
 }

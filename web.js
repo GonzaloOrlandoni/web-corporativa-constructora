@@ -68,4 +68,45 @@ document.addEventListener("DOMContentLoaded", function () {
   sections.forEach((section) => {
     observer.observe(section);
   });
+  // ==========================================
+  // 4. ANIMACIÓN DE CONTADORES (Números que suben)
+  // ==========================================
+
+  const runCounterAnimation = (el) => {
+    const target = +el.getAttribute('data-target'); // El número final (el + convierte string a numero)
+    const duration = 2000; // Duración en milisegundos (2 segundos)
+    const increment = target / (duration / 16); // 60 FPS (1000ms / 60 ≈ 16ms)
+
+    let current = 0;
+
+    const updateCounter = () => {
+      current += increment;
+
+      if (current < target) {
+        el.innerText = Math.ceil(current); // Redondeamos hacia arriba
+        requestAnimationFrame(updateCounter); // Siguiente frame
+      } else {
+        el.innerText = target; // Aseguramos que termine en el número exacto
+      }
+    };
+
+    updateCounter();
+  };
+
+  // Observer específico para los contadores
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        runCounterAnimation(counter);
+        observer.unobserve(counter); // Solo animar una vez
+      }
+    });
+  }, { threshold: 0.5 }); // Se activa cuando el 50% del número es visible
+
+  // Seleccionamos todos los números y los observamos
+  const counters = document.querySelectorAll('.number');
+  counters.forEach(counter => {
+    counterObserver.observe(counter);
+  });
 });

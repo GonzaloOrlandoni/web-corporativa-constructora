@@ -1,35 +1,80 @@
-// /scss/layout/_global.scss
+// =========================================
+// CONFIGURACIÓN GLOBAL
+// =========================================
+
+html {
+  scroll-behavior: smooth; // ESTO AGREGA LA SUTILEZA AL NAVEGAR CON EL MENÚ
+}
 
 body {
   background-color: $color-light;
+
+  // PROBEMOS CON 0.9 (90% Blanco).
+  // Si se ve mucho, súbelo a 0.95. Si no se ve, bájalo a 0.85.
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../img/ingeniero-planos.jpg');
+
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: $color-text;
   font-family: $font-stack;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   min-height: 100vh;
-}
-
-h1,
-h2,
-h3 {
-  font-family: $font-headings;
-  color: $color-primary;
-  margin-bottom: 0.5rem;
-}
-
-.main-content-wrapper {
-  padding-top: 5rem;
-}
-
-.main-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  overflow-x: hidden;
 }
 
 // =========================================
-// HERO SECTION (Imagen de fondo)
+// TIPOGRAFÍA GLOBAL (Centrado de H2)
+// =========================================
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-headings;
+  color: $color-primary;
+  margin-bottom: 0.5rem;
+  font-weight: 700; // Bien negrita
+  text-transform: uppercase; // MAYÚSCULAS (Le da mucha presencia)
+  letter-spacing: 1px; // Un poco de aire
+}
+
+p,
+a,
+li,
+span,
+input,
+textarea {
+  font-family: $font-stack; // El resto usa Inter
+}
+
+// REGLA MAESTRA PARA CENTRAR TÍTULOS DE SECCIÓN
+section h2 {
+  text-align: center; // Centra el texto
+  width: 100%; // Asegura que ocupe todo el ancho
+  display: block; // Evita comportamientos raros de inline
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+
+  // La línea decorativa naranja debajo del título
+  &::after {
+    content: "";
+    display: block;
+    width: 80px; // Ancho de la rayita
+    height: 4px;
+    background: $color-accent;
+    margin: 0.8rem auto 0; // "auto" a los lados es lo que la centra matemáticamente
+    border-radius: 2px;
+  }
+}
+
+// =========================================
+// HERO SECTION (Con efecto respiración)
 // =========================================
 #hero {
   height: 100vh;
@@ -42,110 +87,74 @@ h3 {
   justify-content: center;
   text-align: center;
 
-  // 1. FONDO (ESTÁTICO AHORA)
+  // Fondo estático
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/hero-constructora.jpg') center/cover no-repeat;
+    background: url("../img/hero-constructora.jpg") center/cover no-repeat;
     z-index: -1;
-    // Ya no hay animación aquí
   }
 }
 
-// 2. CONTENIDO QUE "RESPIRA"
 .hero-content {
   position: relative;
   z-index: 2;
   padding: 0 1rem;
-
-  // Aquí aplicamos la magia
-  // 3s = tiempo de inhalar/exhalar
-  // infinite alternate = va y vuelve
-  animation: textBreathing 3s ease-in-out infinite alternate;
+  animation: textBreathing 4s ease-in-out infinite alternate; // Más lento (4s) para más sutileza
 
   h1 {
     font-size: 3.5rem;
     color: $white;
     margin-bottom: 1rem;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5); // Sombra para leer mejor
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   }
 
   p {
     font-size: 1.5rem;
     color: $color-light;
     margin-bottom: 2rem;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   }
 }
 
-// 3. DEFINICIÓN DE LA RESPIRACIÓN
 @keyframes textBreathing {
   0% {
-    transform: scale(1); // Tamaño normal
+    transform: scale(1);
   }
   100% {
-    transform: scale(1.05); // Crece un 5% (Sutil, si pones 1.1 o 1.2 marea)
-  }
+    transform: scale(1.03);
+  } // Movimiento muy sutil (solo 3%)
 }
 
-// Overlay (Capa oscura)
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.4));
+  background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.5));
   z-index: 1;
 }
 
-// Capa oscura encima de la foto para que se lea el texto
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  // Degradado de izquierda (oscuro) a derecha (más transparente)
-  background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.4));
-}
-// El texto y botones
-.hero-content {
-  position: relative;
-  z-index: 2; // Para que quede encima de la capa oscura
-
-  h1 {
-    font-size: 3rem;
-    color: $color-light; // Usamos tu variable de blanco
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1.5rem;
-    color: $color-light;
-    margin-bottom: 2rem;
-  }
-}
-
 // =========================================
-// ANIMACIÓN SCROLL (Aparición)
+// ANIMACIÓN SCROLL "SUTIL" (Fade In)
 // =========================================
 
-// 1. ESTADO INICIAL (Invisible y desplazado)
 .fade-in-section {
-  opacity: 0;                 // Invisible
-  transform: translateY(50px); // Empujado 50px hacia abajo
-  transition: opacity 1s ease-out, transform 1s ease-out; // Tarda 1 segundo en aparecer
+  opacity: 0;
+  transform: translateY(30px); // Menos distancia (antes 50px) para que no salte tanto
+
+  // Cubic-bezier: Hace que la animación empiece algo rápido y frene suavemente al final
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+
   will-change: opacity, transform;
 }
 
-// 2. ESTADO FINAL (Visible y en su lugar)
-// Esta clase la agrega JavaScript cuando bajas con el scroll
 .fade-in-section.is-visible {
-  opacity: 1;                 // Totalmente visible
-  transform: translateY(0);    // Vuelve a su posición original
+  opacity: 1;
+  transform: translateY(0);
 }

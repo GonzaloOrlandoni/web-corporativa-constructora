@@ -1,29 +1,11 @@
 #servicios {
   padding: 5rem 1rem;
-  background-color: #fff;
   text-align: center;
 
-  h2 {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: $color-primary;
-    position: relative;
-    display: inline-block;
 
-    // La rayita dorada debajo del título
-    &::after {
-      content: "";
-      display: block;
-      width: 50%;
-      height: 4px;
-      background: $color-accent;
-      margin: 0.5rem auto 0;
-    }
-  }
 
   .services-grid {
     display: grid;
-    // Magia responsive: Columnas de mínimo 300px
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
@@ -34,12 +16,14 @@
     background: $color-light;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
-    text-align: left;
+
+    // CAMBIO AQUÍ: Centramos todo el contenido de la tarjeta
+    text-align: center;
 
     &:hover {
-      transform: translateY(-10px); // La tarjeta sube al pasar el mouse
+      transform: translateY(-10px);
     }
 
     img {
@@ -49,9 +33,11 @@
     }
 
     h3 {
-      padding: 1.5rem 1.5rem 0.5rem;
+      // Ajustamos padding para que no quede pegado
+      padding: 1.5rem 1rem 0.5rem;
       color: $color-primary;
       font-size: 1.4rem;
+      font-weight: 700;
     }
 
     p {

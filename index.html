@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Constructora | Solidez y Diseño</title>
+    <title>GO Constructora | Solidez y Diseño</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -17,7 +19,7 @@
   <body>
     <header id="navbar">
       <div class="nav-container">
-        <a href="#" class="logo">CONSTRUCTORA<span>.</span></a>
+        <a href="#" class="logo">GO CONSTRUCTORA<span></span></a>
 
         <button class="hamburger" id="hamburger">
           <span></span>
@@ -75,18 +77,22 @@
         </div>
       </section>
 
-      <section id="counters" class="counters-section fade-in-section">
-        <div class="counter-item">
-          <span class="number">15+</span>
-          <p>Años Operando</p>
-        </div>
-        <div class="counter-item">
-          <span class="number">120</span>
-          <p>Obras Finalizadas</p>
-        </div>
-        <div class="counter-item">
-          <span class="number">100%</span>
-          <p>Clientes Satisfechos</p>
+      <section id="counters" class="fade-in-section">
+        <div class="counters-container">
+          <div class="counter-item">
+            <span class="number" data-target="15">0</span><span class="symbol">+</span>
+            <p>Años Operando</p>
+          </div>
+
+          <div class="counter-item">
+            <span class="number" data-target="120">0</span><span class="symbol">+</span>
+            <p>Obras Finalizadas</p>
+          </div>
+
+          <div class="counter-item">
+            <span class="number" data-target="100">0</span><span class="symbol">%</span>
+            <p>Clientes Satisfechos</p>
+          </div>
         </div>
       </section>
 
@@ -121,23 +127,70 @@
 
       <section id="contacto" class="fade-in-section">
         <h2>Inicia tu Proyecto</h2>
-        <form action="#" method="POST">
-          <input type="text" placeholder="Nombre Completo" required />
-          <input type="email" placeholder="Correo Electrónico" required />
-          <textarea rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-          <button type="submit" class="btn btn--primary">Enviar Consulta</button>
+        <p class="contact-intro">Déjanos tus datos y un asesor técnico te contactará a la brevedad.</p>
+
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Nombre Completo" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Correo Electrónico" required />
+          </div>
+
+          <div class="form-group full-width">
+            <input type="text" placeholder="Asunto" required />
+          </div>
+          <div class="form-group full-width">
+            <textarea rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn--primary">Enviar Consulta</button>
+          </div>
         </form>
       </section>
     </main>
 
     <footer>
-      <div class="footer-content">
-        <p>&copy; 2025 Constructora. Arquitectura e Ingeniería.</p>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Constructora<span></span></h3>
+          <p>
+            Líderes en desarrollo de infraestructura y proyectos arquitectónicos de alta complejidad. Construimos
+            confianza desde hace 15 años.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="contact-info">
+            <li>📍 Av. Libertador 1234, Buenos Aires</li>
+            <li>📞 +54 11 4455-6677</li>
+            <li>✉️ contacto@constructora.com</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#">IG</a>
+            <a href="#">LI</a>
+            <a href="#">FB</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Constructora S.A. Todos los derechos reservados.</p>
       </div>
     </footer>
 
     <button id="scrollTopBtn" title="Volver arriba">▲</button>
-
     <script src="web.js"></script>
   </body>
 </html>
