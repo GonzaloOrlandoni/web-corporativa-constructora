@@ -11,7 +11,8 @@ body {
 
   // PROBEMOS CON 0.9 (90% Blanco).
   // Si se ve mucho, súbelo a 0.95. Si no se ve, bájalo a 0.85.
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../img/ingeniero-planos.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("../img/ingeniero-planos.jpg");
 
   background-attachment: fixed;
   background-size: cover;
@@ -157,4 +158,27 @@ section h2 {
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+// AJUSTE RESPONSIVE GLOBAL
+@media (max-width: 768px) {
+  // Reducir tamaños de fuente en celular
+  h1 {
+    font-size: 2.2rem !important;
+  }
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  section {
+    padding: 3rem 1rem !important;
+  } // Menos padding vertical
+
+  // Ajuste del Hero para que el texto no se salga
+  .hero-content {
+    padding: 0 1.5rem;
+    p {
+      font-size: 1.1rem !important;
+    }
+  }
 }

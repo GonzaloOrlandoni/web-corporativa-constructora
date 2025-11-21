@@ -2,38 +2,40 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; // El fondo ocupa todo el ancho
+  width: 100%;
   height: 80px;
-  background-color: rgba(44, 62, 80, 0.95); // Gris oscuro casi opaco
-  backdrop-filter: blur(5px);
+  background-color: rgba(0, 78, 146, 0.95); // Azul Corporativo con transparencia
+  backdrop-filter: blur(10px);
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 
-  // ESTO ES LO QUE CENTRA EL CONTENIDO
   .nav-container {
-    max-width: 1200px; // Ancho máximo estándar
-    width: 100%; // Ocupa lo que pueda hasta llegar a 1200px
+    max-width: 1200px;
+    width: 100%;
     height: 100%;
-    margin: 0 auto; // ¡MAGIA! Esto centra el bloque en la pantalla
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between; // Logo a la izquierda del bloque, Menú a la derecha
+    justify-content: space-between;
     align-items: center;
-    padding: 0 2rem; // Un poco de aire a los costados en pantallas chicas
+    padding: 0 1.5rem; // Padding seguro
   }
 
   .logo {
     font-family: $font-headings;
-    color: #fff; // Blanco
-    font-size: 1.5rem;
+    color: $white;
+    font-size: 1.6rem;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1001; // Para que siempre esté encima del menú móvil
 
     span {
       color: $color-accent;
-    } // El punto naranja
+    }
   }
 
+  // ESTILOS DE ESCRITORIO
   nav ul {
     display: flex;
     list-style: none;
@@ -43,58 +45,108 @@
     align-items: center;
 
     a {
-      color: #ecf0f1; // Gris muy claro
+      color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
+      font-family: $font-stack;
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       text-transform: uppercase;
       transition: color 0.3s;
+      font-size: 0.9rem;
 
       &:hover {
-        color: $color-accent; // Naranja al pasar el mouse
+        color: $color-accent;
       }
     }
   }
 
-  // El botón destacado del menú
+  // Botón CTA en el menú
   .btn--cta {
-    background-color: transparent;
     border: 2px solid $color-accent;
     padding: 0.5rem 1.5rem;
-    border-radius: 50px;
+    border-radius: 4px;
     color: $color-accent !important;
     transition: all 0.3s ease;
 
     &:hover {
       background-color: $color-accent;
-      color: #fff !important;
+      color: $white !important;
     }
   }
 }
 
-// Ocultar hamburguesa en escritorio
+// BOTÓN HAMBURGUESA (Solo visible en móvil)
 .hamburger {
-  display: none;
-}
+  display: none; // Oculto en escritorio
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1002; // Encima de todo
 
-// Responsive Móvil
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .hamburger span {
-    display: block;
+  span {
     width: 25px;
     height: 3px;
-    background: #fff;
-    margin: 5px 0;
+    background-color: $white;
+    margin: 2px 0;
+    transition: 0.4s;
+    border-radius: 2px;
   }
 
-  // Ocultamos el menú normal en celular
-  .nav-links {
-    display: none;
+  // Animación al abrir (se convierte en X)
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 5px);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -5px);
+    }
+  }
+}
+
+// =========================================
+// ESTILOS MÓVILES (RESPONSIVE)
+// =========================================
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; // Aparece el botón
+  }
+
+  #navbar nav ul {
+    // Estado inicial: Oculto y fuera de pantalla
+    position: fixed;
+    top: 0;
+    right: -100%; // Escondido a la derecha
+    width: 70%; // Ocupa el 70% de la pantalla
+    height: 100vh;
+    background-color: $color-primary; // Fondo Azul Sólido
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: 0.4s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+
+    // Cuando JS agrega la clase .show
+    &.show {
+      right: 0; // Entra en pantalla
+    }
+
+    a {
+      font-size: 1.2rem; // Letra más grande para tocar con el dedo
+      color: $white;
+    }
+
+    // El botón de contacto en móvil se ve sólido
+    .btn--cta {
+      background-color: $color-accent;
+      color: $white !important;
+      border: none;
+      width: 100%;
+      text-align: center;
+    }
   }
 }

@@ -26,7 +26,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr; // Dos columnas de igual tamaño (50% - 50%)
     column-gap: 2rem; // Espacio horizontal entre Nombre y Correo
-    row-gap: 1.5rem;  // Espacio vertical entre filas
+    row-gap: 1.5rem; // Espacio vertical entre filas
     // --------------------------------------------
 
     background: $color-primary;
@@ -46,7 +46,8 @@
     }
 
     // ESTILO DE LOS CAMPOS
-    input, textarea {
+    input,
+    textarea {
       width: 100%; // Ocupa todo el espacio disponible en su celda
       padding: 1.2rem;
       background-color: #fff;

@@ -6,18 +6,18 @@
   margin-top: 2rem; // Separación de la sección anterior
 
   // Sombrita sutil interna para darle volumen
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
 
   // EL CONTENEDOR FLEX (El que ordena los items)
   .counters-container {
-    max-width: 1200px;  // Ancho máximo estándar
-    margin: 0 auto;     // Centrado en la pantalla
-    padding: 0 1rem;    // Margen de seguridad para móviles
+    max-width: 1200px; // Ancho máximo estándar
+    margin: 0 auto; // Centrado en la pantalla
+    padding: 0 1rem; // Margen de seguridad para móviles
 
-    display: flex;             // ¡ESTO LOS PONE EN FILA!
+    display: flex; // ¡ESTO LOS PONE EN FILA!
     justify-content: space-between; // Los separa equitativamente
-    align-items: center;       // Los alinea verticalmente
-    flex-wrap: wrap;           // Permite que bajen si no hay espacio
+    align-items: center; // Los alinea verticalmente
+    flex-wrap: wrap; // Permite que bajen si no hay espacio
   }
 
   // CADA CONTADOR INDIVIDUAL
@@ -29,13 +29,13 @@
 
     // LÍNEA SEPARADORA (Estilo técnico)
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       right: 0;
       top: 10%;
       height: 80%; // La línea no llega hasta los bordes
       width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
     }
 
     // Quitamos la línea del último elemento
@@ -44,15 +44,16 @@
     }
 
     // EL NÚMERO Y EL SÍMBOLO
-    .number, .symbol {
+    .number,
+    .symbol {
       font-family: $font-headings; // Fuente Robusta
-      font-size: 4rem;             // Tamaño gigante
+      font-size: 4rem; // Tamaño gigante
       font-weight: 700;
-      color: $color-accent;        // Naranja
+      color: $color-accent; // Naranja
       display: inline-block;
       line-height: 1;
       margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3); // Sombra para que "flote"
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); // Sombra para que "flote"
     }
 
     // EL TEXTO DEBAJO
@@ -83,13 +84,17 @@
       width: 100%; // Ocupan todo el ancho
 
       // Quitamos la línea vertical
-      &::after { display: none; }
+      &::after {
+        display: none;
+      }
 
       // Ponemos una línea horizontal abajo
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding-bottom: 2rem;
 
-      &:last-child { border-bottom: none; }
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 }

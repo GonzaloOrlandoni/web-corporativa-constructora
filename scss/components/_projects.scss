@@ -20,7 +20,7 @@
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer; // Manito al pasar el mouse
 
     img {
@@ -35,9 +35,9 @@
       transform: scale(1.1);
     }
 
-// ... dentro de .project-card:hover img ...
+    // ... dentro de .project-card:hover img ...
 
-// ... dentro de .project-card ...
+    // ... dentro de .project-card ...
 
     .project-info {
       position: absolute;
@@ -54,8 +54,8 @@
       display: flex;
       flex-direction: column; // Uno arriba del otro
       justify-content: center; // Centrado Vertical
-      align-items: center;     // Centrado Horizontal
-      text-align: center;      // Respaldo
+      align-items: center; // Centrado Horizontal
+      text-align: center; // Respaldo
       // ---------------------------------------
 
       h3 {
@@ -63,7 +63,7 @@
         font-size: 1.3rem;
         color: $color-accent; // Dorado
         font-weight: 700;
-        line-height: 1.2;     // Evita que se separen mucho si tiene 2 líneas
+        line-height: 1.2; // Evita que se separen mucho si tiene 2 líneas
       }
 
       p {

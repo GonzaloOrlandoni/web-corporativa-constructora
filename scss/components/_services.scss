@@ -2,8 +2,6 @@
   padding: 5rem 1rem;
   text-align: center;
 
-
-
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -16,7 +14,7 @@
     background: $color-light;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 
     // CAMBIO AQUÍ: Centramos todo el contenido de la tarjeta
