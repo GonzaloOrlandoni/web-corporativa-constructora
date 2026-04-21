@@ -12,7 +12,7 @@ body {
   // PROBEMOS CON 0.9 (90% Blanco).
   // Si se ve mucho, súbelo a 0.95. Si no se ve, bájalo a 0.85.
   background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-    url("../img/ingeniero-planos.jpg");
+    url("../img/ingeniero-planos.webp");
 
   background-attachment: fixed;
   background-size: cover;
@@ -58,7 +58,7 @@ section h2 {
   text-align: center; // Centra el texto
   width: 100%; // Asegura que ocupe todo el ancho
   display: block; // Evita comportamientos raros de inline
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 3rem;
   position: relative;
 
@@ -96,7 +96,7 @@ section h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../img/hero-constructora.jpg") center/cover no-repeat;
+    background: url("../img/hero-constructora.webp") center/cover no-repeat;
     z-index: -1;
   }
 }
@@ -108,7 +108,7 @@ section h2 {
   animation: textBreathing 4s ease-in-out infinite alternate; // Más lento (4s) para más sutileza
 
   h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 5vw + 1rem, 3.5rem);
     color: $white;
     margin-bottom: 1rem;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -162,14 +162,6 @@ section h2 {
 
 // AJUSTE RESPONSIVE GLOBAL
 @media (max-width: 768px) {
-  // Reducir tamaños de fuente en celular
-  h1 {
-    font-size: 2.2rem !important;
-  }
-  h2 {
-    font-size: 1.8rem !important;
-  }
-
   section {
     padding: 3rem 1rem !important;
   } // Menos padding vertical

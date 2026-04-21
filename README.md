@@ -35,7 +35,16 @@ Se desarrolló una identidad visual propia para transmitir confianza y modernida
   - **Contadores Dinámicos:** Animación numérica en tiempo real para estadísticas.
   - **Micro-interacciones:** Feedback visual en botones y campos de formulario.
   - **Texturas:** Fondo con efecto "marca de agua" de planos de ingeniería.
-- **Diseño 100% Responsive:** Layout fluido que se adapta desde pantallas 4K hasta móviles, incluyendo un menú hamburguesa personalizado.
+- **Diseño 100% Responsive (Fluido):** Layout completamente fluido y elástico que se adapta desde pantallas 4K hasta móviles de manera orgánica. Utiliza funciones CSS modernas como `clamp()` y `min()` para tipografías fluidas y espaciados dinámicos sin depender exclusivamente de media queries.
+
+## ⚡ Rendimiento y Optimización (V2)
+
+El proyecto ha sido optimizado en todas sus capas (Imágenes, HTML, CSS, JS y SEO) para alcanzar métricas perfectas en Lighthouse:
+
+- **Imágenes Next-Gen:** Todas las fotografías fueron convertidas a formato **WebP**, reduciendo drásticamente su peso, e implementan el atributo `loading="lazy"` para carga diferida.
+- **Rendimiento de Renderizado:** Atributos `defer` en los scripts y estilos SCSS minificados (`--style=compressed`) para evitar bloqueos del hilo principal y mejorar el tiempo de primera carga (FCP).
+- **Animaciones a 60 FPS:** Event listeners declarados como `{ passive: true }` para habilitar un scroll 100% fluido y animaciones gestionadas por `requestAnimationFrame` guiadas por *timestamps* en lugar de incrementos fijos.
+- **SEO & A11y:** Inclusión de metaetiquetas descriptivas, atributos `aria-label` para botones clave (menú, scroll) y contraste óptimo, asegurando que el contenido sea accesible por todos los usuarios y motores de búsqueda.
 
 ## 🛠️ Stack Tecnológico
 

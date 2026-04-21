@@ -1,15 +1,8 @@
 #contacto {
-  padding: 5rem 1rem;
+  padding: clamp(3rem, 5vw, 5rem) 1rem;
   background-color: transparent;
   text-align: center;
   position: relative;
-
-  h2 {
-    color: $color-primary;
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-  }
 
   .contact-intro {
     max-width: 600px;
@@ -30,7 +23,7 @@
     // --------------------------------------------
 
     background: $color-primary;
-    padding: 3.5rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 

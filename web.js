@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const scrollTopBtn = document.getElementById("scrollTopBtn");
 
   if (scrollTopBtn) {
-    // Escuchar el evento de scroll de la ventana
+    // Escuchar el evento de scroll de la ventana, con passive true para mejor rendimiento
     window.addEventListener("scroll", () => {
       // Si bajamos más de 300px, mostramos el botón
       if (window.scrollY > 300) {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         scrollTopBtn.style.display = "none";
       }
-    });
+    }, { passive: true });
 
     // Al hacer clic, subir suavemente
     scrollTopBtn.addEventListener("click", () => {
@@ -75,22 +75,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const runCounterAnimation = (el) => {
     const target = +el.getAttribute("data-target"); // El número final (el + convierte string a numero)
     const duration = 2000; // Duración en milisegundos (2 segundos)
-    const increment = target / (duration / 16); // 60 FPS (1000ms / 60 ≈ 16ms)
+    let startTimestamp = null;
 
-    let current = 0;
-
-    const updateCounter = () => {
-      current += increment;
-
-      if (current < target) {
-        el.innerText = Math.ceil(current); // Redondeamos hacia arriba
-        requestAnimationFrame(updateCounter); // Siguiente frame
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      el.innerText = Math.floor(progress * target);
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
       } else {
-        el.innerText = target; // Aseguramos que termine en el número exacto
+        el.innerText = target;
       }
     };
 
-    updateCounter();
+    window.requestAnimationFrame(step);
   };
 
   // Observer específico para los contadores

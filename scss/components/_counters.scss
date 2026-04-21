@@ -1,6 +1,6 @@
 #counters {
   background-color: $color-primary; // Fondo Gris Oscuro (Full Width)
-  padding: 5rem 0; // Espacio vertical generoso
+  padding: clamp(3rem, 5vw, 5rem) 0; // Espacio vertical generoso
   color: $white;
   position: relative;
   margin-top: 2rem; // Separación de la sección anterior
@@ -47,7 +47,7 @@
     .number,
     .symbol {
       font-family: $font-headings; // Fuente Robusta
-      font-size: 4rem; // Tamaño gigante
+      font-size: clamp(2.5rem, 8vw, 4rem); // Tamaño gigante
       font-weight: 700;
       color: $color-accent; // Naranja
       display: inline-block;
@@ -73,8 +73,6 @@
 // =========================================
 @media (max-width: 768px) {
   #counters {
-    padding: 3rem 0;
-
     .counters-container {
       flex-direction: column; // En celular, uno debajo del otro
       gap: 3rem; // Espacio entre ellos
