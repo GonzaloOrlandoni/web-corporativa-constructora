@@ -112,4 +112,93 @@ document.addEventListener("DOMContentLoaded", function () {
   counters.forEach((counter) => {
     counterObserver.observe(counter);
   });
+  // ==========================================
+  // 5. BARRA DE PROGRESO DE LECTURA
+  // ==========================================
+  const progressBar = document.getElementById("progress-bar");
+  if (progressBar) {
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      const total = document.body.scrollHeight - window.innerHeight;
+      progressBar.style.width = ((scrolled / total) * 100) + "%";
+    }, { passive: true });
+  }
+
+  // ==========================================
+  // 6. FORMULARIO DE CONTACTO (Async + Toast)
+  // ==========================================
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Honeypot check
+      const honeypot = contactForm.querySelector('input[name="website"]');
+      if (honeypot && honeypot.value.trim() !== "") {
+        setTimeout(() => showToast("¡Mensaje enviado con éxito!", "success"), 1500);
+        contactForm.reset();
+        return;
+      }
+
+      const submitBtn = document.getElementById("submit-btn");
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando...";
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          showToast("¡Consulta enviada! Un asesor te contactará pronto.", "success");
+          contactForm.reset();
+        } else {
+          showToast("Error al enviar. Intentá nuevamente.", "error");
+        }
+      } catch {
+        showToast("Error de conexión. Verificá tu internet.", "error");
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Enviar Consulta";
+        }
+      }
+    });
+  }
 });
+
+// ==========================================
+// SISTEMA DE TOASTS
+// ==========================================
+function showToast(message, type = "info") {
+  const container = document.getElementById("toast-container");
+  if (!container) return;
+
+  const toast = document.createElement("div");
+  toast.className = `toast toast-${type}`;
+
+  let icon = "ℹ️";
+  if (type === "success") icon = "✅";
+  if (type === "error") icon = "❌";
+
+  toast.innerHTML = `<span class="toast-icon">${icon}</span><span class="toast-message"></span><button class="toast-close">✕</button>`;
+  toast.querySelector(".toast-message").textContent = message;
+  container.appendChild(toast);
+
+  setTimeout(() => toast.classList.add("show"), 10);
+  const timeout = setTimeout(() => closeToast(toast), 5000);
+  toast.querySelector(".toast-close").addEventListener("click", () => {
+    clearTimeout(timeout);
+    closeToast(toast);
+  });
+}
+
+function closeToast(toast) {
+  toast.classList.remove("show");
+  toast.classList.add("hide");
+  toast.addEventListener("transitionend", () => toast.remove(), { once: true });
+}

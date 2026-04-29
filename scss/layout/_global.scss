@@ -3,7 +3,8 @@
 // =========================================
 
 html {
-  scroll-behavior: smooth; // ESTO AGREGA LA SUTILEZA AL NAVEGAR CON EL MENÚ
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; // Compensa la navbar fija
 }
 
 body {
@@ -15,6 +16,11 @@ body {
     url("../img/ingeniero-planos.webp");
 
   background-attachment: fixed;
+
+  // background-attachment: fixed no funciona en iOS/Safari mobile
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+  }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
