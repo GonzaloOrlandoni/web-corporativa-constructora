@@ -1,7 +1,7 @@
 # 🏗️ GO Constructora - Web Corporativa
 
 <p align="center">
-  <img src="img/preview.png" alt="Vista Previa de GO Constructora" width="100%">
+  <img src="img/preview.webp" alt="Vista Previa de GO Constructora" width="100%">
 </p>
 
 <p align="center">
