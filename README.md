@@ -43,7 +43,7 @@ El proyecto ha sido optimizado en todas sus capas (Imágenes, HTML, CSS, JS y SE
 
 - **Imágenes Next-Gen:** Todas las fotografías fueron convertidas a formato **WebP**, reduciendo drásticamente su peso, e implementan el atributo `loading="lazy"` para carga diferida.
 - **Rendimiento de Renderizado:** Atributos `defer` en los scripts y estilos SCSS minificados (`--style=compressed`) para evitar bloqueos del hilo principal y mejorar el tiempo de primera carga (FCP).
-- **Animaciones a 60 FPS:** Event listeners declarados como `{ passive: true }` para habilitar un scroll 100% fluido y animaciones gestionadas por `requestAnimationFrame` guiadas por *timestamps* en lugar de incrementos fijos.
+- **Animaciones a 60 FPS:** Event listeners declarados como `{ passive: true }` para habilitar un scroll 100% fluido y animaciones gestionadas por `requestAnimationFrame` guiadas por _timestamps_ en lugar de incrementos fijos.
 - **SEO & A11y:** Inclusión de metaetiquetas descriptivas, atributos `aria-label` para botones clave (menú, scroll) y contraste óptimo, asegurando que el contenido sea accesible por todos los usuarios y motores de búsqueda.
 
 ## 🛠️ Stack Tecnológico
