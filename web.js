@@ -22,14 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (scrollTopBtn) {
     // Escuchar el evento de scroll de la ventana, con passive true para mejor rendimiento
-    window.addEventListener("scroll", () => {
-      // Si bajamos más de 300px, mostramos el botón
-      if (window.scrollY > 300) {
-        scrollTopBtn.style.display = "block";
-      } else {
-        scrollTopBtn.style.display = "none";
-      }
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        // Si bajamos más de 300px, mostramos el botón
+        if (window.scrollY > 300) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      },
+      { passive: true },
+    );
 
     // Al hacer clic, subir suavemente
     scrollTopBtn.addEventListener("click", () => {
@@ -80,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
+
       el.innerText = Math.floor(progress * target);
-      
+
       if (progress < 1) {
         window.requestAnimationFrame(step);
       } else {
@@ -104,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.5 },
   ); // Se activa cuando el 50% del número es visible
 
   // Seleccionamos todos los números y los observamos
@@ -117,11 +121,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // ==========================================
   const progressBar = document.getElementById("progress-bar");
   if (progressBar) {
-    window.addEventListener("scroll", () => {
-      const scrolled = window.scrollY;
-      const total = document.body.scrollHeight - window.innerHeight;
-      progressBar.style.width = ((scrolled / total) * 100) + "%";
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        const scrolled = window.scrollY;
+        const total = document.body.scrollHeight - window.innerHeight;
+        progressBar.style.width = (scrolled / total) * 100 + "%";
+      },
+      { passive: true },
+    );
   }
 
   // ==========================================
@@ -135,7 +143,10 @@ document.addEventListener("DOMContentLoaded", function () {
       // Honeypot check
       const honeypot = contactForm.querySelector('input[name="website"]');
       if (honeypot && honeypot.value.trim() !== "") {
-        setTimeout(() => showToast("¡Mensaje enviado con éxito!", "success"), 1500);
+        setTimeout(
+          () => showToast("¡Mensaje enviado con éxito!", "success"),
+          1500,
+        );
         contactForm.reset();
         return;
       }
@@ -154,7 +165,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (response.ok) {
-          showToast("¡Consulta enviada! Un asesor te contactará pronto.", "success");
+          showToast(
+            "¡Consulta enviada! Un asesor te contactará pronto.",
+            "success",
+          );
           contactForm.reset();
         } else {
           showToast("Error al enviar. Intentá nuevamente.", "error");

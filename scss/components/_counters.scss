@@ -35,7 +35,12 @@
       top: 10%;
       height: 80%; // La línea no llega hasta los bordes
       width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
     }
 
     // Quitamos la línea del último elemento

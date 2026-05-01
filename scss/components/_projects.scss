@@ -40,7 +40,11 @@
       width: 100%;
 
       // Fondo oscuro con degradado
-      background: linear-gradient(to top, rgba(15, 44, 89, 0.95), rgba(15, 44, 89, 0.85));
+      background: linear-gradient(
+        to top,
+        rgba(15, 44, 89, 0.95),
+        rgba(15, 44, 89, 0.85)
+      );
       padding: 1.5rem 1rem; // Un poco más de padding
       color: #fff;
 
